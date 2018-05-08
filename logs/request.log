@@ -456,3 +456,9 @@ WARNING 2018-05-08 16:33:54,589 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/
 WARNING 2018-05-08 16:33:57,372 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py base.py base get_response 93: Not Found: /
 WARNING 2018-05-08 16:33:57,845 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py base.py base get_response 93: Not Found: /
 WARNING 2018-05-08 16:33:58,055 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py base.py base get_response 93: Not Found: /
+WARNING 2018-05-08 17:13:37,569 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py base.py base get_response 93: Not Found: /
+WARNING 2018-05-08 17:13:37,834 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py base.py base get_response 93: Not Found: /favicon.ico
+WARNING 2018-05-08 17:13:42,737 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py base.py base get_response 93: Not Found: /home/
+WARNING 2018-05-08 17:13:59,937 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py base.py base get_response 93: Not Found: /dev
+WARNING 2018-05-08 17:26:33,164 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py base.py base get_response 93: Not Found: /dev
+WARNING 2018-05-08 17:27:11,569 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py base.py base get_response 93: Not Found: /d03916dec2250358c847.hot-update.json

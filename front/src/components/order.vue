@@ -40,35 +40,35 @@
                 </template>
             </el-table-column>
 
-            
-            
+
+
             <el-table-column prop="student_name" label="student_name"></el-table-column>
-            
-            
-            
+
+
+
             <el-table-column prop="order_style" label="order_style"></el-table-column>
-            
-            
-            
+
+
+
             <el-table-column prop="update_time" label="update_time"></el-table-column>
-            
-            
-            
+
+
+
             <el-table-column prop="id" label="id"></el-table-column>
-            
-            
-            
+
+
+
             <el-table-column prop="create_time" label="create_time"></el-table-column>
-            
-            
-            
+
+
+
             <el-table-column prop="target_school" label="target_school"></el-table-column>
-            
-            
-            
+
+
+
             <el-table-column prop="target_major" label="target_major"></el-table-column>
-            
-            
+
+
 
             <el-table-column label="操作" width="190">
                 <template scope="scope">
@@ -87,63 +87,63 @@
             <el-form class="demo-form-inline" label-width="100px" :model="add_form" status-icon size="mini"
                      ref="add_form">
 
-                
-                
+
+
                 <el-form-item label="student_name" prop="student_name">
-                    
+
                         <el-input v-model="add_form.student_name"></el-input>
-                    
+
                 </el-form-item>
-                
-                
-                
+
+
+
                 <el-form-item label="order_style" prop="order_style">
-                    
+
                         <el-input v-model="add_form.order_style"></el-input>
-                    
+
                 </el-form-item>
-                
-                
-                
+
+
+
                 <el-form-item label="update_time" prop="update_time">
-                    
+
                         <el-input v-model="add_form.update_time"></el-input>
-                    
+
                 </el-form-item>
-                
-                
-                
+
+
+
                 <el-form-item label="id" prop="id">
-                    
+
                         <el-input v-model="add_form.id"></el-input>
-                    
+
                 </el-form-item>
-                
-                
-                
+
+
+
                 <el-form-item label="create_time" prop="create_time">
-                    
+
                         <el-input v-model="add_form.create_time"></el-input>
-                    
+
                 </el-form-item>
-                
-                
-                
+
+
+
                 <el-form-item label="target_school" prop="target_school">
-                    
+
                         <el-input v-model="add_form.target_school"></el-input>
-                    
+
                 </el-form-item>
-                
-                
-                
+
+
+
                 <el-form-item label="target_major" prop="target_major">
-                    
+
                         <el-input v-model="add_form.target_major"></el-input>
-                    
+
                 </el-form-item>
-                
-                
+
+
 
             </el-form>
 
@@ -160,63 +160,63 @@
             <el-form class="demo-form-inline" label-width="100px" :model="edit_form" status-icon size="mini"
                      ref="edit_form">
 
-                
-                
+
+
                 <el-form-item label="student_name" prop="student_name">
-                    
+
                     <el-input v-model="edit_form.student_name"></el-input>
-                    
+
                 </el-form-item>
-                
-                
-                
+
+
+
                 <el-form-item label="order_style" prop="order_style">
-                    
+
                     <el-input v-model="edit_form.order_style"></el-input>
-                    
+
                 </el-form-item>
-                
-                
-                
+
+
+
                 <el-form-item label="update_time" prop="update_time">
-                    
+
                     <el-input v-model="edit_form.update_time"></el-input>
-                    
+
                 </el-form-item>
-                
-                
-                
+
+
+
                 <el-form-item label="id" prop="id">
-                    
+
                     <el-input v-model="edit_form.id"></el-input>
-                    
+
                 </el-form-item>
-                
-                
-                
+
+
+
                 <el-form-item label="create_time" prop="create_time">
-                    
+
                     <el-input v-model="edit_form.create_time"></el-input>
-                    
+
                 </el-form-item>
-                
-                
-                
+
+
+
                 <el-form-item label="target_school" prop="target_school">
-                    
+
                     <el-input v-model="edit_form.target_school"></el-input>
-                    
+
                 </el-form-item>
-                
-                
-                
+
+
+
                 <el-form-item label="target_major" prop="target_major">
-                    
+
                     <el-input v-model="edit_form.target_major"></el-input>
-                    
+
                 </el-form-item>
-                
-                
+
+
 
 
 
@@ -263,7 +263,7 @@
                 loading: false,
                 add_form: {
                     visible:false,
-                    
+
                         student_name:'',
                         order_style:'',
                         update_time:'',
@@ -274,7 +274,7 @@
                     },
                 edit_form: {
                     visible:false,
-                
+
                     student_name:'',
                     order_style:'',
                     update_time:'',
@@ -299,7 +299,7 @@
             open_edit(data) {
                 this.edit_form = {
                     visible:true,
-                
+
                     student_name:data.student_name,
                     order_style:data.order_style,
                     update_time:data.update_time,
@@ -316,7 +316,7 @@
                     search = this.search,
                     that = this
                 this.loading = true
-                var response = await request.get('http://localhost:8000/v1/api/order/', {
+                var response = await request.get('/v1/api/order/', {
                     params: {
                         page_size,
                         page_num,
@@ -335,7 +335,7 @@
                 try {
                     await this.su_validate('add_form')
                     var add_form = this.add_form
-                    var response = await request.post('http://localhost:8000/v1/api/order/', add_form)
+                    var response = await request.post('/v1/api/order/', add_form)
                     this.add_form.visible = false
                     this.$message({
                         type: 'success',
@@ -358,7 +358,7 @@
                         cancelButtonText: '取消',
                         type: 'warning'
                     })
-                    var response = await request.delete('http://localhost:8000/v1/api/order/' + data.id + '/')
+                    var response = await request.delete('/v1/api/order/' + data.id + '/')
 
                     this.$message({
                         type: 'success',
@@ -382,7 +382,7 @@
                         type: 'success',
                         message: '修改信息成功!'
                     });
-                    var response = await request.put('http://localhost:8000/v1/api/order/' + id + '/', edit_form)
+                    var response = await request.put('/v1/api/order/' + id + '/', edit_form)
                     this.edit_form.visible = false
                     this.fetch()
                 } catch (e) {

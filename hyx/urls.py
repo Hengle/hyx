@@ -21,6 +21,7 @@ from ky.api.teacher import Teacher
 from ky.api.order import Order
 from django.http.response import HttpResponse
 from django.conf.urls import handler404, handler500
+from ky.views import index,dev
 
 def test(request):
     return HttpResponse('hello world')
@@ -30,6 +31,8 @@ handler500 = 'ky.status.page500'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index),
+    path('dev/', dev),
     path('v1/api/student/', include(Student.urls())),
     path('v1/api/teacher/', include(Teacher.urls())),
     path('v1/api/order/', include(Order.urls())),

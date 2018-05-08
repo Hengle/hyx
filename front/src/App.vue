@@ -14,19 +14,19 @@
                         :default-active="name"
                         class="el-menu-vertical-demo"
                 >
-                    
+
                     <el-menu-item index="/order" @click="route('/order')">
-                        <span slot="title">order</span>
+                        <span slot="title">订单</span>
                     </el-menu-item>
-                    
+
                     <el-menu-item index="/student" @click="route('/student')">
-                        <span slot="title">student</span>
+                        <span slot="title">学生</span>
                     </el-menu-item>
-                    
+
                     <el-menu-item index="/teacher" @click="route('/teacher')">
-                        <span slot="title">teacher</span>
+                        <span slot="title">老师</span>
                     </el-menu-item>
-                    
+
 
                 </el-menu>
             </el-col>

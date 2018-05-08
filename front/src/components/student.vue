@@ -550,7 +550,7 @@
                     search = this.search,
                     that = this
                 this.loading = true
-                var response = await request.get('http://localhost:8000/v1/api/student/', {
+                var response = await request.get('/v1/api/student/', {
                     params: {
                         page_size,
                         page_num,
@@ -569,7 +569,7 @@
                 try {
                     await this.su_validate('add_form')
                     var add_form = this.add_form
-                    var response = await request.post('http://localhost:8000/v1/api/student/', add_form)
+                    var response = await request.post('/v1/api/student/', add_form)
                     this.add_form.visible = false
                     this.$message({
                         type: 'success',
@@ -592,7 +592,7 @@
                         cancelButtonText: '取消',
                         type: 'warning'
                     })
-                    var response = await request.delete('http://localhost:8000/v1/api/student/' + data.id + '/')
+                    var response = await request.delete('/v1/api/student/' + data.id + '/')
 
                     this.$message({
                         type: 'success',
@@ -616,7 +616,7 @@
                         type: 'success',
                         message: '修改信息成功!'
                     });
-                    var response = await request.put('http://localhost:8000/v1/api/student/' + id + '/', edit_form)
+                    var response = await request.put('/v1/api/student/' + id + '/', edit_form)
                     this.edit_form.visible = false
                     this.fetch()
                 } catch (e) {
