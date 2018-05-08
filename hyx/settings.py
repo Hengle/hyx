@@ -87,7 +87,8 @@ DATABASES = {
         'NAME': 'jk',
         'USER': 'root',
         'PASSWORD': 'surui123',
-        'HOST': '10.234.5.68',
+        'HOST': '10.234.5.68' if DEBUG else 'localhost',
+        # 'HOST': 'localhost',
         'PORT': '3306',
     }
 
