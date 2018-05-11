@@ -11,7 +11,12 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import socket
 
+hostname = socket.gethostname()
+print(hostname)
+DEBUG = True if hostname=='suruideiMac.local' else False
+print(DEBUG)
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -87,11 +92,10 @@ DATABASES = {
         'NAME': 'jk',
         'USER': 'root',
         'PASSWORD': 'surui123',
-        'HOST': '10.234.5.68' if DEBUG else 'localhost',
+        'HOST': '101.200.129.112',
         # 'HOST': 'localhost',
         'PORT': '3306',
     }
-
 }
 
 
@@ -156,7 +160,7 @@ CORS_ORIGIN_WHITELIST = (
 )
 
 
-LOGGING = {
+LOGGING2 = {
         'version': 1,
         'disable_existing_loggers': False,
         'formatters': {
@@ -221,30 +225,30 @@ LOGGING = {
                 'handlers': ['db','console'],
                 'level': 'DEBUG' if DEBUG else 'INFO',
             },
-            'django': {
-                'handlers': ['default', 'console'],
-                'level': 'DEBUG',
-                'propagate': False
-            },
-            'django.request': {
-                'handlers': ['request_handler'],
-                'level': 'DEBUG',
-                'propagate': False,
-            },
-            'scripts': {
-                'handlers': ['scprits_handler'],
-                'level': 'INFO',
-                'propagate': False
-            },
-            'sourceDns.webdns.views': {
-                'handlers': ['default', 'error'],
-                'level': 'DEBUG',
-                'propagate': True
-            },
-            'sourceDns.webdns.util':{
-                'handlers': ['error'],
-                'level': 'ERROR',
-                'propagate': True
-            }
+            # 'django': {
+            #     'handlers': ['default', 'console'],
+            #     'level': 'DEBUG',
+            #     'propagate': False
+            # },
+            # 'django.request': {
+            #     'handlers': ['request_handler'],
+            #     'level': 'DEBUG',
+            #     'propagate': False,
+            # },
+            # 'scripts': {
+            #     'handlers': ['scprits_handler'],
+            #     'level': 'INFO',
+            #     'propagate': False
+            # },
+            # 'sourceDns.webdns.views': {
+            #     'handlers': ['default', 'error'],
+            #     'level': 'DEBUG',
+            #     'propagate': True
+            # },
+            # 'sourceDns.webdns.util':{
+            #     'handlers': ['error'],
+            #     'level': 'ERROR',
+            #     'propagate': True
+            # }
     },
 }

@@ -33,35 +33,35 @@
                 v-loading="loading"
         >
 
-
             <el-table-column label="序号">
                 <template scope="scope">
                     {{scope.$index+(page_num-1)*page_size+1}}
                 </template>
             </el-table-column>
             <el-table-column prop="name" label="姓名"></el-table-column>
-            <el-table-column prop="sex" label="性别"></el-table-column>
-            <el-table-column prop="mobile" label="电话"></el-table-column>
-            <el-table-column prop="qq" label="qq"></el-table-column>
-            <el-table-column prop="due_year" label="due_year"></el-table-column>
-            <el-table-column prop="apply_time" label="apply_time"></el-table-column>
-             <el-table-column prop="old_school" label="原来学校"></el-table-column>
-            <el-table-column prop="old_major" label="原来专业"></el-table-column>
-            <el-table-column prop="status" label="状态"></el-table-column>
-          <!--<el-table-column prop="remark" label="remark"></el-table-column>-->
- <el-table-column prop="adviser" label="adviser"></el-table-column>
-            <el-table-column prop="if_old_major" label="if_old_major"></el-table-column>
+            <!--<el-table-column prop="sex" label="性别"></el-table-column>-->
+            <el-table-column prop="mobile" label="电话" width="150"></el-table-column>
+            <el-table-column prop="qq" label="qq" width="150"></el-table-column>
+            <el-table-column prop="due_year" label="届数"></el-table-column>
+            <el-table-column prop="apply_time" label="报班时间" width="150"></el-table-column>
+             <el-table-column prop="old_school" label="原学校" width="250"></el-table-column>
+            <el-table-column prop="old_major" label="原专业" width="250"></el-table-column>
+            <!--<el-table-column prop="status" label="状态"></el-table-column>-->
+
+ <el-table-column prop="adviser" label="招生顾问" width="100"></el-table-column>
+            <!--<el-table-column prop="if_old_major" label="if_old_major"></el-table-column>-->
             <!--<el-table-column prop="create_time" label="create_time"></el-table-column>-->
 
+<el-table-column prop="remark" label="备注" width="400"></el-table-column>
 
 
-
-            <el-table-column prop="background" label="background"></el-table-column>
-            <el-table-column label="操作" width="190">
+            <!--<el-table-column prop="background" label="background"></el-table-column>-->
+            <el-table-column label="操作" width="250">
                 <template scope="scope">
                     <el-button-group>
                         <el-button type="danger" @click="remove(scope.row)" size="mini">删除</el-button>
                         <el-button @click="open_edit(scope.row)" size="mini">编辑</el-button>
+                        <el-button @click="$router.push('/sitem?id='+scope.row.id)" size="mini">详情</el-button>
                     </el-button-group>
 
                 </template>
@@ -75,14 +75,11 @@
                      ref="add_form">
 
 
-
                 <el-form-item label="if_old_major" prop="if_old_major">
 
                         <el-input v-model="add_form.if_old_major"></el-input>
 
                 </el-form-item>
-
-
 
                 <el-form-item label="remark" prop="remark">
 

@@ -19,6 +19,11 @@ from django.urls import path,include
 from ky.api.student import Student
 from ky.api.teacher import Teacher
 from ky.api.order import Order
+from ky.api.pro import Pro
+from ky.api.com import Com
+from ky.api.eng import Eng
+from ky.api.pol import Pol
+
 from django.http.response import HttpResponse
 from django.conf.urls import handler404, handler500
 from ky.views import index,dev
@@ -36,6 +41,10 @@ urlpatterns = [
     path('v1/api/student/', include(Student.urls())),
     path('v1/api/teacher/', include(Teacher.urls())),
     path('v1/api/order/', include(Order.urls())),
+    path('v1/api/pro/', include(Pro.urls())),
+    path('v1/api/com/', include(Com.urls())),
+    path('v1/api/eng/', include(Eng.urls())),
+    path('v1/api/pol/', include(Pol.urls())),
 
     path('test/',test)
 ]

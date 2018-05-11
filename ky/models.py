@@ -93,3 +93,72 @@ class UiTeacher(models.Model):
         ordering = ['-create_time', '-update_time']
 
 
+
+
+
+class OiClassProfessional(models.Model):
+    order_id_fk = models.ForeignKey('OiOrder', models.DO_NOTHING, db_column='order_id_fk', blank=True, null=True)
+    class_level = models.IntegerField(blank=True, null=True)
+    teacher_name = models.CharField(max_length=20, blank=True, null=True)
+    assistant_name = models.CharField(max_length=20, blank=True, null=True)
+    skype_count = models.IntegerField(blank=True, null=True)
+    skype_count_now = models.IntegerField(blank=True, null=True)
+    fee = models.IntegerField(blank=True, null=True)
+    if_protocol = models.IntegerField(blank=True, null=True)
+    create_time = models.DateTimeField(blank=True, null=True)
+    update_time = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'oi_class_professional'
+
+
+
+class OiClassCommon(models.Model):
+    order_id_fk = models.IntegerField(blank=True, null=True)
+    class_level = models.IntegerField(blank=True, null=True)
+    teacher_name = models.CharField(max_length=20, blank=True, null=True)
+    assistant_name = models.CharField(max_length=20, blank=True, null=True)
+    skype_count = models.IntegerField(blank=True, null=True)
+    skype_count_now = models.IntegerField(blank=True, null=True)
+    fee = models.IntegerField(blank=True, null=True)
+    create_time = models.DateTimeField(blank=True, null=True)
+    update_time = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'oi_class_common'
+
+
+class OiClassCommonEnglish(models.Model):
+    order_id_fk = models.ForeignKey('OiOrder', models.DO_NOTHING, db_column='order_id_fk', blank=True, null=True)
+    class_level = models.IntegerField(blank=True, null=True)
+    teacher_name = models.CharField(max_length=20, blank=True, null=True)
+    assistant_name = models.CharField(max_length=20, blank=True, null=True)
+    skype_count = models.IntegerField(blank=True, null=True)
+    skype_count_now = models.IntegerField(blank=True, null=True)
+    fee = models.IntegerField(blank=True, null=True)
+    if_protocol = models.IntegerField(blank=True, null=True)
+    create_time = models.DateTimeField(blank=True, null=True)
+    update_time = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'oi_class_common_english'
+
+
+class OiClassCommonPolitic(models.Model):
+    order_id_fk = models.ForeignKey('OiOrder', models.DO_NOTHING, db_column='order_id_fk', blank=True, null=True)
+    class_level = models.IntegerField(blank=True, null=True)
+    teacher_name = models.CharField(max_length=20, blank=True, null=True)
+    assistant_name = models.CharField(max_length=20, blank=True, null=True)
+    skype_count = models.IntegerField(blank=True, null=True)
+    skype_count_now = models.IntegerField(blank=True, null=True)
+    fee = models.IntegerField(blank=True, null=True)
+    if_protocol = models.IntegerField(blank=True, null=True)
+    create_time = models.DateTimeField(blank=True, null=True)
+    update_time = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'oi_class_common_politic'

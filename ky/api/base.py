@@ -10,6 +10,9 @@ class Base(DjangoResource):
             list=data
         )
 
+    def is_authenticated(self):
+        return True
+
     def serialize_list(self, data):
         if self.request.GET.get('no_page', False):
             prepped_data = [self.prepare(item) for item in data]

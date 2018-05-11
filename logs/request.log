@@ -462,3 +462,1123 @@ WARNING 2018-05-08 17:13:42,737 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/
 WARNING 2018-05-08 17:13:59,937 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py base.py base get_response 93: Not Found: /dev
 WARNING 2018-05-08 17:26:33,164 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py base.py base get_response 93: Not Found: /dev
 WARNING 2018-05-08 17:27:11,569 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py base.py base get_response 93: Not Found: /d03916dec2250358c847.hot-update.json
+ERROR 2018-05-09 12:00:00,172 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/css/app.css
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/css/app.css'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:00,172 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/vendor.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/vendor.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:00,172 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/app.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/app.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:00,172 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/manifest.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/manifest.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:04,223 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/css/app.css
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/css/app.css'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:16,607 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/css/app.css
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/css/app.css'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:16,608 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/manifest.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/manifest.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:16,612 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/vendor.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/vendor.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:16,616 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/app.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/app.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:17,110 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/css/app.css
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/css/app.css'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:17,115 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/manifest.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/manifest.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:17,118 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/vendor.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/vendor.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:17,121 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/app.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/app.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:17,217 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/css/app.css
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/css/app.css'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:17,217 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/manifest.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/manifest.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:17,218 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/vendor.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/vendor.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:17,219 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/app.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/app.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:17,338 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/css/app.css
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/css/app.css'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:17,338 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/manifest.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/manifest.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:17,339 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/vendor.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/vendor.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:17,339 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/app.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/app.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:32,003 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/css/app.css
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/css/app.css'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:32,004 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/manifest.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/manifest.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:32,006 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/vendor.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/vendor.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:32,008 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/app.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/app.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:51,373 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/css/app.css
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/css/app.css'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:51,374 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/manifest.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/manifest.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:51,376 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/vendor.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/vendor.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:51,377 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/app.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/app.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:54,493 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/ky/js/manifest.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/ky/js/manifest.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:54,508 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/css/bootstrap.min.css
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/css/bootstrap.min.css'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:54,511 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/css/style.css
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/css/style.css'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:54,512 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/css/animate.css
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/css/animate.css'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:54,516 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/js/bootstrap.min.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/js/bootstrap.min.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:54,513 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/font-awesome/css/font-awesome.css
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/font-awesome/css/font-awesome.css'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 12:00:54,515 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/js/jquery-2.1.1.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/js/jquery-2.1.1.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:36:15,831 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /37691106695843e96303.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': '37691106695843e96303.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:36:31,740 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /dev
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'dev'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:36:31,775 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/css/bootstrap.min.css
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/css/bootstrap.min.css'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:36:31,777 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/font-awesome/css/font-awesome.css
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/font-awesome/css/font-awesome.css'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:36:31,781 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/css/animate.css
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/css/animate.css'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:36:31,784 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/css/style.css
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/css/style.css'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:36:31,785 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/js/jquery-2.1.1.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/js/jquery-2.1.1.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:36:31,788 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /static/js/bootstrap.min.js
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'static/js/bootstrap.min.js'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:37:30,467 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /9af2e592fc68690b92ca.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': '9af2e592fc68690b92ca.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:38:41,963 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /5f5a47a297c0ce964ca7.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': '5f5a47a297c0ce964ca7.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:38:51,695 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /169c689d3b0527c7a4a2.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': '169c689d3b0527c7a4a2.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:39:36,154 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /f61661281784df0fcb6e.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'f61661281784df0fcb6e.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:39:47,843 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /fb63079ac2acdb4d4822.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'fb63079ac2acdb4d4822.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:40:34,689 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /b799a91a03c6fb3a6be7.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'b799a91a03c6fb3a6be7.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:41:01,688 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /2c26343572e86a27b498.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': '2c26343572e86a27b498.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:41:16,441 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /e2c50a583b953ed7762f.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'e2c50a583b953ed7762f.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:42:01,098 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /fd8881b1513857b815a5.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'fd8881b1513857b815a5.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:42:24,619 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /5e1f0bed9c77ec2e5db1.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': '5e1f0bed9c77ec2e5db1.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:42:42,312 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /5eb5d5230047bb5e8859.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': '5eb5d5230047bb5e8859.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:44:59,567 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /733d96cce8a961f54ca7.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': '733d96cce8a961f54ca7.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:50:26,807 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /8cbb5cf9149d11f14168.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': '8cbb5cf9149d11f14168.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:50:57,046 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /e41a9abbb4138232ac95.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'e41a9abbb4138232ac95.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:51:06,193 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /8d1d7c703e090d0ecd1b.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': '8d1d7c703e090d0ecd1b.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:51:37,617 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /e478111bc894f71a395d.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'e478111bc894f71a395d.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:53:06,814 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /c28993b89bbe0924ec26.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'c28993b89bbe0924ec26.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:53:54,207 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /3fd07351c326e0d9feab.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': '3fd07351c326e0d9feab.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:55:25,623 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /98730cbcb5dcdc2385c9.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': '98730cbcb5dcdc2385c9.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:55:54,752 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /c4c8fddadf99f0a71b31.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': 'c4c8fddadf99f0a71b31.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 13:56:45,572 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /8229608f372cc447ff94.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': '8229608f372cc447ff94.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 14:03:38,928 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /18fdf25842fd6708acdc.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': '18fdf25842fd6708acdc.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 14:04:56,343 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /27b9d81a43fd762586db.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': '27b9d81a43fd762586db.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 14:05:26,619 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /363fe4722481695c521c.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]], 'path': '363fe4722481695c521c.hot-update.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 14:17:22,549 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /b07a8772f61a0f20f6fd.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'path': 'b07a8772f61a0f20f6fd.hot-update.json', 'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
+ERROR 2018-05-09 14:17:42,913 /Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py exception.py exception handle_uncaught_exception 118: Internal Server Error: /1188b2cb4d896c521404.hot-update.json
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/urls/resolvers.py", line 523, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'path': '1188b2cb4d896c521404.hot-update.json', 'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLPattern ''>], [<URLPattern 'dev/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/student/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/teacher/'>], [<URLResolver <URLPattern list> (None:None) 'v1/api/order/'>], [<URLPattern 'test/'>]]}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/surui/.pyenv/versions/3.5.5/envs/hyx/lib/python3.5/site-packages/django/core/handlers/exception.py", line 99, in get_exception_response
+    response = callback(request, **dict(param_dict, exception=exception))
+TypeError: page404() got an unexpected keyword argument 'exception'
