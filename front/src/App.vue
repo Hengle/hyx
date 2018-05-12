@@ -14,19 +14,13 @@
                         :default-active="name"
                         class="el-menu-vertical-demo"
                 >
-
-                    <el-menu-item index="/order" @click="route('/order')">
-                        <span slot="title">订单</span>
-                    </el-menu-item>
-
                     <el-menu-item index="/student" @click="route('/student')">
                         <span slot="title">学生</span>
                     </el-menu-item>
 
                     <el-menu-item index="/teacher" @click="route('/teacher')">
-                        <span slot="title">老师</span>
+                        <span slot="title">辅导员</span>
                     </el-menu-item>
-
 
                 </el-menu>
             </el-col>
@@ -56,7 +50,7 @@
     }
 </script>
 
-<style scoped>
+<style>
     body,html{
         width: 100%;
         height: 100%;
@@ -75,6 +69,9 @@
         min-width: 1280px;
 
     }
+
+
+
     .top-bar{
         background:#1ab394 ;
         height: 44x;

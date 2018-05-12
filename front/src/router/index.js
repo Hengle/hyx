@@ -8,7 +8,7 @@ import student from '../components/student.vue'
 
 import teacher from '../components/teacher.vue'
 import stuItem from '../components/student-item'
-
+import teaItem from '../components/teacher-item'
 
 Vue.use(Router)
 
@@ -37,6 +37,12 @@ export default new Router({
             path: '/sitem',
             name: '/sitem',
             component: stuItem
+        },
+
+         {
+            path: '/teaItem',
+            name: '/teaItem',
+            component: teaItem
         },
 
         {

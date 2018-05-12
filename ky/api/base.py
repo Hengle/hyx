@@ -1,6 +1,9 @@
 from restless.dj import DjangoResource
+from restless.utils import format_traceback
 from hyx.settings import PAGE_SIZE, PAGE_NUM
 from django.core.paginator import Paginator
+from hyx.settings import DEBUG
+import sys
 
 
 class Base(DjangoResource):
@@ -12,6 +15,33 @@ class Base(DjangoResource):
 
     def is_authenticated(self):
         return True
+
+    def is_debug(self):
+        return DEBUG
+
+    def build_error(self, err):
+        """
+        When an exception is encountered, this generates a JSON error message
+        for display to the user.
+
+        :param err: The exception seen. The message is exposed to the user, so
+            beware of sensitive data leaking.
+        :type err: Exception
+
+        :returns: A response object
+        """
+        data = {
+            'error': err.args[0],
+        }
+        print('hello world')
+        if self.is_debug():
+            # Add the traceback.
+            print('is debug')
+            data['traceback'] = format_traceback(sys.exc_info())
+
+        body = self.serializer.serialize(data)
+        status = getattr(err, 'status', 500)
+        return self.build_response(body, status=status)
 
     def serialize_list(self, data):
         if self.request.GET.get('no_page', False):
@@ -36,3 +66,4 @@ class Base(DjangoResource):
             )
 
             return self.serializer.serialize(final_data)
+

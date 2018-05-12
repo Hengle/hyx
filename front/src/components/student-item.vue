@@ -85,6 +85,14 @@
 
               <span v-else> {{item.study_status}}</span>
             </el-form-item>
+
+            <el-form-item label="辅导员：">
+              <el-select v-model="item.teacher_id" v-if="edit_item">
+                <el-option v-for="item in teacher_list" :label="item.name" :value="item.id"></el-option>
+              </el-select>
+              <span v-else> {{order.class_level}}</span>
+            </el-form-item>
+
             <el-form-item label="备注：">
               <el-input v-if="edit_item" v-model="item.remark" type="textarea" rows="6"></el-input>
               <span v-else> {{item.remark}}</span>
@@ -270,8 +278,10 @@
 </template>
 <script>
   import request from 'axios'
-
+  let loading
   var basic = require('../stableDict')
+
+
   export default {
     name: 'student-item',
     data() {
@@ -285,21 +295,39 @@
         edit_item: true,
         edit_order: true,
         edit_pro: true,
-        basic: basic
+        basic: basic,
+        teacher_list:[]
       }
     },
     methods: {
+
+      start_loading(){
+        loading = this.$loading({
+          lock: true,
+          text: '正在修改...',
+          spinner: 'el-icon-loading',
+          background: 'rgba(0, 0, 0, 0.1)'
+        });
+      },
+      end_loading(){
+        loading.close()
+      },
+
       async fetch() {
+
         let id = this.$route.query.id
         let res = await request.get('/v1/api/student/' + id + '/')
         console.log(res, 'res')
+
         this.item = res.data
       },
 
       async save_item() {
+        this.start_loading()
         let id = this.$route.query.id
         let res = await request.put('/v1/api/student/' + id + '/', this.item)
         console.log(res, 'res')
+        this.end_loading()
         this.item = res.data
       },
 
@@ -310,9 +338,11 @@
         this.order = res.data
       },
       async save_order(){
+        this.start_loading()
          let id = this.$route.query.id
         let res = await request.put('/v1/api/order/' + id + '/', this.order)
         console.log(res, 'res')
+        this.end_loading()
         this.item = res.data
       },
 
@@ -323,9 +353,11 @@
         this.pro = res.data
       },
        async save_pro(){
+        this.start_loading()
          let id = this.order.id
         let res = await request.put('/v1/api/pro/' + id + '/', this.pro)
         console.log(res, 'res')
+         this.end_loading()
         this.item = res.data
       },
 
@@ -337,9 +369,11 @@
         this.eng = res.data
       },
        async save_eng(){
+        this.start_loading()
         let id = this.order.id
         let res = await request.put('/v1/api/eng/' + id + '/', this.eng)
         console.log(res, 'res')
+         this.end_loading()
         this.item = res.data
       },
 
@@ -350,9 +384,11 @@
         this.com = res.data
       },
        async save_com(){
+        this.start_loading()
         let id = this.order.id
         let res = await request.put('/v1/api/com/' + id + '/', this.com)
         console.log(res, 'res')
+         this.end_loading()
         this.item = res.data
       },
 
@@ -363,19 +399,30 @@
         this.pol = res.data
       },
        async save_pol(){
+        this.start_loading()
         let id = this.order.id
         let res = await request.put('/v1/api/pol/' + id + '/', this.pol)
         console.log(res, 'res')
+         this.end_loading()
         this.pol = res.data
       },
+      async fetch_teacher(){
+        let res = await request.get('/v1/api/teacher/' )
+        console.log(res, 'res')
+        this.teacher_list = res.data.list
+      }
     },
     async mounted() {
+
+      await this.fetch_teacher()
       this.fetch()
       await this.fetch_order()
+
       this.fetch_pro()
       this.fetch_eng()
       this.fetch_com()
       this.fetch_pol()
+
     }
   }
 </script>

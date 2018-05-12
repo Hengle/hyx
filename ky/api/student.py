@@ -2,7 +2,7 @@ from restless.dj import DjangoResource
 from restless.preparers import FieldsPreparer,SubPreparer,CollectionSubPreparer
 
 
-from ky.models import UiStudent
+from ky.models import UiStudent,UiTeacher
 from ky.api.base import Base
 
 class Student(Base):
@@ -27,6 +27,7 @@ class Student(Base):
         'author':'author',
         'remark':'remark',
         'extend':'extend',
+        'teacher_id':'teacher_id',
         'create_time':'create_time',
         'update_time':'update_time',
     })
@@ -64,6 +65,7 @@ class Student(Base):
         student.extend = self.data['extend'] if 'extend' in self.data else student.extend
 
         student.name = self.data['name'] if 'time' in self.data else student.name
+        student.teacher = UiTeacher.objects.get(id=int(self.data['teacher_id'])) if 'teacher_id' in self.data else student.teacher
         student.save()
         return student
 
