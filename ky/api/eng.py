@@ -32,18 +32,18 @@ class Eng(Base):
     # 在order->sutdent 外建 这里id 逻辑上是学生id
     def detail(self, pk):
         order = OiOrder.objects.get(id=pk)
-        return OiClassCommonEnglish.objects.get(order_id_fk=order)
+        return OiClassCommonEnglish.objects.get(order=order)
 
     def create(self):
         pass
 
     def update(self,pk):
         order = OiOrder.objects.get(id=pk)
-        lesson = OiClassCommonEnglish.objects.filter(order_id_fk=order)
+        lesson = OiClassCommonEnglish.objects.filter(order=order)
         if not lesson.exists():
-            lesson = OiClassCommonEnglish(order_id_fk=order)
+            lesson = OiClassCommonEnglish(order=order)
         else:
-            lesson = OiClassCommonEnglish.objects.get(order_id_fk=order)
+            lesson = OiClassCommonEnglish.objects.get(order=order)
         lesson.class_level = self.data['class_level'] if 'class_level' in self.data else lesson.class_level
         lesson.fee = self.data['fee'] if 'fee' in self.data else lesson.fee
         lesson.skype_count = self.data['skype_count'] if 'skype_count' in self.data else lesson.skype_count

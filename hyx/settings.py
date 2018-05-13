@@ -30,6 +30,7 @@ SECRET_KEY = '#6z*9+qx-wowu#%6eg40cc+v$(za6y9jdo1%!vqom42&j_*^t*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if hostname=='suruideiMac.local' else False
 
+
 ALLOWED_HOSTS = [
     '101.200.129.112',
     'localhost'
@@ -93,8 +94,8 @@ DATABASES = {
         'NAME': 'jk',
         'USER': 'root',
         'PASSWORD': 'surui123',
-        'HOST': '101.200.129.112',
-        # 'HOST': 'localhost',
+        # 'HOST': '101.200.129.112',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }

@@ -32,18 +32,18 @@ class Pro(Base):
     # 在order->sutdent 外建 这里id 逻辑上是学生id
     def detail(self, pk):
         order = OiOrder.objects.get(id=pk)
-        return OiClassProfessional.objects.get(order_id_fk=order)
+        return OiClassProfessional.objects.get(order=order)
 
     def create(self):
         pass
 
     def update(self,pk):
         order = OiOrder.objects.get(id=pk)
-        lesson = OiClassProfessional.objects.filter(order_id_fk=order)
+        lesson = OiClassProfessional.objects.filter(order=order)
         if not lesson.exists():
-            lesson = OiClassProfessional(order_id_fk=order)
+            lesson = OiClassProfessional(order=order)
         else:
-            lesson=OiClassProfessional.objects.get(order_id_fk=order)
+            lesson=OiClassProfessional.objects.get(order=order)
 
         lesson.class_level = self.data['class_level'] if 'class_level' in self.data else lesson.class_level
         lesson.fee = self.data['fee'] if 'fee' in self.data else lesson.fee

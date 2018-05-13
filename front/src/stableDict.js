@@ -145,10 +145,10 @@ const dict = {
     15: { "id": 15, "name": "政治", "checked": false, },
   },
   email_sent:[
-    { "id": 1, "name": "已发" },
-    { "id": 2, "name": "未发" },
+    { "id": true, "name": "已发" },
+    { "id": false, "name": "未发" },
   ],
-  marjor_sent:[
+  major_sent:[
     { "id": 1, "name": "专业课基础资料" },
     { "id": 2, "name": "专业课强化资料" },
     { "id": 3, "name": "专业课冲刺资料" },
@@ -156,7 +156,7 @@ const dict = {
   public_sent:[
     { "id": 1, "name": "公共课基础资料" },
     { "id": 2, "name": "公共课强化资料" },
-    { "id": 2, "name": "公共课冲刺资料" },
+    { "id": 3, "name": "公共课冲刺资料" },
   ]
 };
 

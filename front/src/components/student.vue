@@ -18,6 +18,7 @@
                 <el-button-group>
                     <el-button type="primary" @click="fetch" size="mini">查询</el-button>
                     <el-button @click="add_form.visible=true" size="mini">增加</el-button>
+                     <el-button @click="  $router.push('/stuUpload')  " size="mini">批量上传</el-button>
 
                 </el-button-group>
             </el-form-item>

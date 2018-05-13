@@ -93,6 +93,23 @@
               <span v-else> {{order.class_level}}</span>
             </el-form-item>
 
+
+            <el-form-item label="入学邮件发放">
+              <el-radio-group v-model="item.email_sent">
+                <el-radio-button  v-for="i in basic.email_sent" :label="i.id">{{i.name}}</el-radio-button>
+              </el-radio-group>
+            </el-form-item>
+            <el-form-item label="专业课资料发放">
+             <el-radio-group v-model="item.major_sent">
+                <el-radio-button v-for="i in basic.major_sent" :label="i.id">{{i.name}}</el-radio-button>
+              </el-radio-group>
+            </el-form-item>
+            <el-form-item label="公共课资料发放">
+             <el-radio-group v-model="item.public_sent">
+                <el-radio-button  v-for="i in basic.public_sent" :label="i.id">{{i.name}}</el-radio-button>
+              </el-radio-group>
+            </el-form-item>
+
             <el-form-item label="备注：">
               <el-input v-if="edit_item" v-model="item.remark" type="textarea" rows="6"></el-input>
               <span v-else> {{item.remark}}</span>

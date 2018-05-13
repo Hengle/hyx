@@ -33,10 +33,10 @@ class Base(DjangoResource):
         data = {
             'error': err.args[0],
         }
-        print('hello world')
+
         if self.is_debug():
             # Add the traceback.
-            print('is debug')
+
             data['traceback'] = format_traceback(sys.exc_info())
 
         body = self.serializer.serialize(data)

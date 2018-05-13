@@ -11,18 +11,7 @@ from django.db import models
 
 
 
-class OiOrder(models.Model):
-    student_id_fk = models.ForeignKey('UiStudent', models.DO_NOTHING, db_column='student_id_fk', blank=True, null=True)
-    order_style = models.IntegerField(blank=True, null=True)
-    target_school = models.CharField(max_length=20, blank=True, null=True)
-    target_major = models.CharField(max_length=20, blank=True, null=True)
-    create_time = models.DateTimeField(blank=True, null=True, auto_now=True)
-    update_time = models.DateTimeField(blank=True, null=True, auto_now=True)
 
-    class Meta:
-        managed = False
-        db_table = 'oi_order'
-        ordering = ['-create_time', '-update_time']
 
 
 
@@ -67,6 +56,9 @@ class UiTeacher(models.Model):
         db_table = 'ui_teacher'
         ordering = ['-create_time', '-update_time']
 
+    def __str__(self):
+        return self.name
+
     @property
     def student(self):
         return self.uistudent_set.all()
@@ -79,7 +71,7 @@ class UiStudent(models.Model):
     mobile = models.CharField(max_length=11, blank=True, null=True)
     qq = models.CharField(unique=True, max_length=11, blank=True, null=True)
     adviser = models.CharField(max_length=20, blank=True, null=True)
-    due_year = models.IntegerField(blank=True, null=True)
+    due_year = models.CharField(max_length=128,blank=True, null=True)
     old_school = models.CharField(max_length=20, blank=True, null=True)
     old_major = models.CharField(max_length=20, blank=True, null=True)
     study_status = models.IntegerField(blank=True, null=True)
@@ -94,17 +86,33 @@ class UiStudent(models.Model):
     create_time = models.DateTimeField(blank=True, null=True, auto_now=True)
     update_time = models.DateTimeField(blank=True, null=True, auto_now=True)
     teacher = models.ForeignKey(UiTeacher,null=True,blank=True,on_delete=models.SET_NULL)
-
+    email_sent = models.BooleanField(default=False)
+    major_sent = models.IntegerField(null=True,blank=True)
+    public_sent = models.IntegerField(null=True,blank=True)
 
     class Meta:
         managed = True
         db_table = 'ui_student'
         ordering = ['-create_time', '-update_time']
 
+    def __str__(self):
+        return self.name
 
+
+class OiOrder(models.Model):
+    student = models.ForeignKey(UiStudent, on_delete=models.SET_NULL, blank=True, null=True)
+    order_style = models.IntegerField(blank=True, null=True)
+    target_school = models.CharField(max_length=20, blank=True, null=True)
+    target_major = models.CharField(max_length=20, blank=True, null=True)
+    create_time = models.DateTimeField(blank=True, null=True, auto_now=True)
+    update_time = models.DateTimeField(blank=True, null=True, auto_now=True)
+
+    class Meta:
+        db_table = 'oi_order'
+        ordering = ['-create_time', '-update_time']
 
 class OiClassProfessional(models.Model):
-    order_id_fk = models.ForeignKey('OiOrder', models.SET_NULL, blank=True, null=True)
+    order = models.ForeignKey(OiOrder,on_delete= models.SET_NULL, blank=True, null=True)
     class_level = models.IntegerField(blank=True, null=True)
     teacher_name = models.CharField(max_length=20, blank=True, null=True)
     assistant_name = models.CharField(max_length=20, blank=True, null=True)
@@ -116,13 +124,13 @@ class OiClassProfessional(models.Model):
     update_time = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        managed = False
+
         db_table = 'oi_class_professional'
 
 
 
 class OiClassCommon(models.Model):
-    order_id_fk = models.IntegerField(blank=True, null=True)
+    order = models.ForeignKey(OiOrder,on_delete=models.SET_NULL,blank=True, null=True)
     class_level = models.IntegerField(blank=True, null=True)
     teacher_name = models.CharField(max_length=20, blank=True, null=True)
     assistant_name = models.CharField(max_length=20, blank=True, null=True)
@@ -133,12 +141,11 @@ class OiClassCommon(models.Model):
     update_time = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        managed = True
         db_table = 'oi_class_common'
 
 
 class OiClassCommonEnglish(models.Model):
-    order_id_fk = models.ForeignKey('OiOrder', models.SET_NULL, blank=True, null=True)
+    order = models.ForeignKey(OiOrder,on_delete= models.SET_NULL, blank=True, null=True)
     class_level = models.IntegerField(blank=True, null=True)
     teacher_name = models.CharField(max_length=20, blank=True, null=True)
     assistant_name = models.CharField(max_length=20, blank=True, null=True)
@@ -150,12 +157,11 @@ class OiClassCommonEnglish(models.Model):
     update_time = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        managed = True
         db_table = 'oi_class_common_english'
 
 
 class OiClassCommonPolitic(models.Model):
-    order_id_fk = models.ForeignKey('OiOrder', models.SET_NULL, blank=True, null=True)
+    order = models.ForeignKey(OiOrder, on_delete=models.SET_NULL, blank=True, null=True)
     class_level = models.IntegerField(blank=True, null=True)
     teacher_name = models.CharField(max_length=20, blank=True, null=True)
     assistant_name = models.CharField(max_length=20, blank=True, null=True)
@@ -167,5 +173,4 @@ class OiClassCommonPolitic(models.Model):
     update_time = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        managed = True
         db_table = 'oi_class_common_politic'

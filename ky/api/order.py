@@ -8,7 +8,6 @@ from ky.api.base import Base
 class Order(Base):
     preparer = FieldsPreparer(fields={
         'id': 'id',
-        # 'student_id_fk':'student_id_fk',
         'student_name':'student_id_fk.name',
         'order_style':'order_style',
         'target_school':'target_school',
@@ -24,7 +23,7 @@ class Order(Base):
     # 在order->sutdent 外建 这里id 逻辑上是学生id
     def detail(self, pk):
         student = UiStudent.objects.get(id=pk)
-        return OiOrder.objects.get(student_id_fk=student)
+        return OiOrder.objects.get(student=student)
 
     def create(self):
         pass
