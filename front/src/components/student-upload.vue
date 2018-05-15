@@ -19,8 +19,14 @@
 
 
     </el-form>
-
-    <el-progress :text-inside="true" :stroke-width="18" :percentage="per" status="success"></el-progress>
+    <el-form>
+      <el-form-item label="总数据">{{total}}</el-form-item>
+      <el-form-item label="成功数">{{success}}</el-form-item>
+      <el-form-item label="失败数">{{error}}</el-form-item>
+       <el-form-item label="名字">
+         <span v-for="e in err_list">{{e}}&nbsp;&nbsp;</span>
+       </el-form-item>
+    </el-form>
     <br/>
 
     <el-table
@@ -48,12 +54,12 @@
       <el-table-column prop="old_school" label="本科学校"></el-table-column>
       <!--<el-table-column prop="remark" label="备注"></el-table-column>-->
 
-  <el-table-column prop="status" label="状态">
-      <template scope="scope">
-          <p style="color: rgba(0,0,0,0.3)" v-if="scope.row.status =='准备上传' ">{{scope.row.status}}</p>
-          <p style="color: #1ab394" v-else>{{scope.row.status}}</p>
-      </template>
-  </el-table-column>
+  <!--<el-table-column prop="status" label="状态">-->
+      <!--<template scope="scope">-->
+          <!--<p style="color: rgba(0,0,0,0.3)" v-if="scope.row.status =='准备上传' ">{{scope.row.status}}</p>-->
+          <!--<p style="color: #1ab394" v-else>{{scope.row.status}}</p>-->
+      <!--</template>-->
+  <!--</el-table-column>-->
 
       <!--<el-table-column label="操作" width="250">-->
         <!--<template scope="scope">-->
@@ -76,8 +82,11 @@
     data() {
       return {
         list:[],
-        per:0,
-        num:0
+
+        error:0,
+        success:0,
+        total:0,
+        err_list:[]
       }
     },
     methods: {
@@ -140,6 +149,9 @@
           })
 
           that.list = list
+          that.total = that.list.length
+          that.success =0
+          that.error = 0
         };
         reader.readAsBinaryString(file);
       },
@@ -150,11 +162,11 @@
 
 
          request.post('/v1/excel/student_upload',that.list[i]).then(function (res) {
-            Vue.set(that.list,i,res.data)
-           that.num = that.num +1
-
-           that.per = that.num*100/that.list.length
-          })
+            that.success = that.success +1
+          }).catch(function (e) {
+           that.error=that.error+1
+           that.error_list.push(that.list[i].name)
+         })
         }
         for(var i=0;i<this.list.length;i++){
             r(i)
