@@ -2,10 +2,10 @@ from restless.dj import DjangoResource
 from restless.preparers import FieldsPreparer,SubPreparer,CollectionSubPreparer
 
 
-from ky.models import UiTeacher
+from ky.models import Teacher
 from ky.api.base import Base
 
-class Teacher(Base):
+class TeacherAPI(Base):
 
     stu_preparer = FieldsPreparer(fields={
         "id":'id',
@@ -49,13 +49,13 @@ class Teacher(Base):
     })
 
     def list(self):
-        return UiTeacher.objects.filter(name__contains=self.request.GET.get('search', ''))
+        return Teacher.objects.filter(name__contains=self.request.GET.get('search', ''))
 
     def detail(self, pk):
-        return UiTeacher.objects.get(id=pk)
+        return Teacher.objects.get(id=pk)
 
     def create(self):
-        teacher = UiTeacher()
+        teacher = Teacher()
         teacher.name =  self.data['name'] if 'name' in self.data else ''
         teacher.qq = self.data['qq'] if 'qq' in self.data else ''
         teacher.remark = self.data['remark'] if 'remark' in  self.data else ''
@@ -64,7 +64,7 @@ class Teacher(Base):
         return teacher
 
     def update(self,pk):
-        teacher = UiTeacher.objects.get(id=int(pk))
+        teacher = Teacher.objects.get(id=int(pk))
         teacher.name = self.data['name'] if 'name' in self.data else teacher.name
         teacher.qq = self.data['qq'] if 'qq' in self.data else teacher.qq
         teacher.remark = self.data['remark'] if 'qq' in self.data else teacher.remark

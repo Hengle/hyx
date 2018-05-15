@@ -16,13 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
-from ky.api.student import Student
-from ky.api.teacher import Teacher
-from ky.api.order import Order
-from ky.api.pro import Pro
-from ky.api.com import Com
-from ky.api.eng import Eng
-from ky.api.pol import Pol
+from ky.api.student import StudentAPI
+from ky.api.teacher import TeacherAPI
+
 
 from ky.excel import teacher_template,teacher_upload,student_template,student_upload
 
@@ -40,13 +36,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('dev/', dev),
-    path('v1/api/student/', include(Student.urls())),
-    path('v1/api/teacher/', include(Teacher.urls())),
-    path('v1/api/order/', include(Order.urls())),
-    path('v1/api/pro/', include(Pro.urls())),
-    path('v1/api/com/', include(Com.urls())),
-    path('v1/api/eng/', include(Eng.urls())),
-    path('v1/api/pol/', include(Pol.urls())),
+    path('v1/api/student/', include(StudentAPI.urls())),
+    path('v1/api/teacher/', include(TeacherAPI.urls())),
+    # path('v1/api/lesson/', include(Order.urls())),
+    # path('v1/api/pro/', include(Pro.urls())),
+    # path('v1/api/com/', include(Com.urls())),
+    # path('v1/api/eng/', include(Eng.urls())),
+    # path('v1/api/pol/', include(Pol.urls())),
 
     path('v1/excel/teacher_template',teacher_template),
     path('v1/excel/teacher_upload', teacher_upload),

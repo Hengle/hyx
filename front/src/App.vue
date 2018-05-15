@@ -19,7 +19,7 @@
                     </el-menu-item>
 
                     <el-menu-item index="/teacher" @click="route('/teacher')">
-                        <span slot="title">辅导员</span>
+                        <span slot="title">老师</span>
                     </el-menu-item>
 
                 </el-menu>

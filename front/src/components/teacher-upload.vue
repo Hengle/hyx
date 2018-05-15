@@ -17,6 +17,7 @@
      <el-form-item>
         <el-button @click="  upload  " size="mini">上传</el-button>
       </el-form-item>
+
     </el-form>
 
     <el-table

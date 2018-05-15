@@ -1,7 +1,7 @@
 <template>
   <div class="student-item">
     <el-row :gutter="20">
-      <el-col :span="12">
+
         <el-card class="box-card">
           <h3>基本信息</h3>
           <el-form size="mini" label-width="100">
@@ -90,7 +90,7 @@
               <el-select v-model="item.teacher_id" v-if="edit_item">
                 <el-option v-for="item in teacher_list" :label="item.name" :value="item.id"></el-option>
               </el-select>
-              <span v-else> {{order.class_level}}</span>
+
             </el-form-item>
 
 
@@ -110,186 +110,67 @@
               </el-radio-group>
             </el-form-item>
 
+             <el-form-item label="目标学校：">
+              <el-input v-if="edit_order" v-model="item.target_school"></el-input>
+              <span v-else> {{order.target_school}}</span>
+            </el-form-item>
+            <el-form-item label="目标专业：">
+              <el-input v-if="edit_order" v-model="item.target_major"></el-input>
+              <span v-else> {{order.target_major}}</span>
+            </el-form-item>
+
             <el-form-item label="备注：">
               <el-input v-if="edit_item" v-model="item.remark" type="textarea" rows="6"></el-input>
               <span v-else> {{item.remark}}</span>
+            </el-form-item>
+
+              <h3>专业课报班级信息</h3>
+
+                 <el-form-item label="报班级别：">
+              <el-select v-model="item.pro.class_level" v-if="edit_item">
+                <el-option v-for="item in basic.classLevelProfessional" :label="item.name" :value="item.id"></el-option>
+              </el-select>
 
             </el-form-item>
 
+            <el-form-item label="费用">
+              <el-input v-model="item.pro.fee"></el-input>
+            </el-form-item>
+
+            <el-form-item label="一共沟通次数">
+              <el-input v-model="item.pro.skype_count"></el-input>
+            </el-form-item>
+
+            <el-form-item label="现在沟通次数">
+              <el-input v-model="item.pro.skype_count_now"></el-input>
+            </el-form-item>
+
+              <el-form-item label="老师名字">
+              <el-input v-model="item.pro.teacher_name"></el-input>
+            </el-form-item>
+
+              <el-form-item label="助手名字">
+              <el-input v-model="item.pro.assistant_name"></el-input>
+            </el-form-item>
+
+            <el-form-item label="是否签协议">
+              <el-radio-group v-model="item.pro.if_protocol">
+                <el-radio-button :label="1">是</el-radio-button>
+                <el-radio-button :label="0">否</el-radio-button>
+              </el-radio-group>
+            </el-form-item>
+            <br/>
             <span style="float: right">
               <el-button v-if="!edit_item" @click="edit_item=true">编辑</el-button>
                <el-button v-else @click="save_item" type="primary">保存</el-button>
             </span>
-
-            <br/>
-
           </el-form>
         </el-card>
 
-        <br/>
-        <el-card>
-          <h3>报考信息</h3>
-          <el-form size="mini" label-width="100">
-            <el-form-item label="目标学校：">
-              <el-input v-if="edit_order" v-model="order.target_school"></el-input>
-              <span v-else> {{order.target_school}}</span>
-            </el-form-item>
-            <el-form-item label="目标专业：">
-              <el-input v-if="edit_order" v-model="order.target_major"></el-input>
-              <span v-else> {{order.target_major}}</span>
-            </el-form-item>
 
-
-            <span style="float: right">
-              <el-button v-if="!edit_order" @click="edit_order=true">编辑</el-button>
-               <el-button v-else @click="save_item" type="primary">保存</el-button>
-            </span>
-            <br/>
-          </el-form>
-
-        </el-card>
-      </el-col>
-
-      <el-col :span="12">
-        <el-card>
-          <h3>专业课</h3>
-          <el-form size="mini" label-width="100">
-            <el-form-item label="报班级别：">
-              <el-select v-model="pro.class_level" v-if="edit_item">
-                <el-option v-for="item in basic.classLevelProfessional" :label="item.name" :value="item.id"></el-option>
-              </el-select>
-              <span v-else> {{order.class_level}}</span>
-            </el-form-item>
-
-            <el-form-item label="费用">
-              <el-input v-model="pro.fee"></el-input>
-            </el-form-item>
-
-            <el-form-item label="沟通次数">
-              <el-input v-model="pro.skype_count"></el-input>
-            </el-form-item>
-
-            <el-form-item label="是否签协议">
-              <el-radio-group v-model="pro.if_protocol">
-                <el-radio-button :label="1">是</el-radio-button>
-                <el-radio-button :label="0">否</el-radio-button>
-              </el-radio-group>
-            </el-form-item>
-
-            <span style="float: right">
-              <el-button v-if="!edit_order" @click="edit_order=true">编辑</el-button>
-               <el-button v-else @click="save_pro" type="primary">保存</el-button>
-            </span>
-            <br/>
-          </el-form>
-
-        </el-card>
-        <br/>
-        <el-card>
-          <h3>英语</h3>
-          <el-form size="mini" label-width="100">
-            <el-form-item label="报班级别：">
-              <el-select v-model="eng.class_level" v-if="edit_item">
-                <el-option v-for="item in basic.classLevelProfessional" :label="item.name" :value="item.id"></el-option>
-              </el-select>
-              <span v-else> {{order.class_level}}</span>
-            </el-form-item>
-
-            <el-form-item label="费用">
-              <el-input v-model="eng.fee"></el-input>
-            </el-form-item>
-
-
-            <el-form-item label="沟通次数">
-              <el-input v-model="eng.skype_count"></el-input>
-            </el-form-item>
-
-            <el-form-item label="是否签协议">
-              <el-radio-group v-model="eng.if_protocol">
-                <el-radio-button :label="1">是</el-radio-button>
-                <el-radio-button :label="0">否</el-radio-button>
-              </el-radio-group>
-            </el-form-item>
-
-            <span style="float: right">
-              <el-button v-if="!edit_order" @click="edit_order=true">编辑</el-button>
-               <el-button v-else @click="save_eng" type="primary">保存</el-button>
-            </span>
-            <br/>
-          </el-form>
-
-        </el-card>
-
-        <br/>
-
-        <el-card>
-          <h3>政治</h3>
-          <el-form size="mini" label-width="100">
-            <el-form-item label="报班级别：">
-              <el-select v-model="pol.class_level" v-if="edit_item">
-                <el-option v-for="item in basic.classLevelProfessional" :label="item.name" :value="item.id"></el-option>
-              </el-select>
-              <span v-else> {{order.class_level}}</span>
-            </el-form-item>
-
-            <el-form-item label="费用">
-              <el-input v-model="pol.fee"></el-input>
-            </el-form-item>
-
-
-            <el-form-item label="沟通次数">
-              <el-input v-model="pol.skype_count"></el-input>
-            </el-form-item>
-
-            <el-form-item label="是否签协议">
-              <el-radio-group v-model="pol.if_protocol">
-                <el-radio-button :label="1">是</el-radio-button>
-                <el-radio-button :label="0">否</el-radio-button>
-              </el-radio-group>
-            </el-form-item>
-
-            <span style="float: right">
-              <el-button v-if="!edit_order" @click="edit_order=true">编辑</el-button>
-               <el-button v-else @click="save_pol" type="primary">保存</el-button>
-            </span>
-            <br/>
-          </el-form>
-
-        </el-card>
-        <br/>
-        <el-card>
-          <h3>公共课</h3>
-          <el-form size="mini" label-width="100">
-            <el-form-item label="报班级别：">
-              <el-select v-model="com.class_level" v-if="edit_item">
-                <el-option v-for="item in basic.classLevelProfessional" :label="item.name" :value="item.id"></el-option>
-              </el-select>
-              <span v-else> {{order.class_level}}</span>
-            </el-form-item>
-
-            <el-form-item label="费用">
-              <el-input v-model="com.fee"></el-input>
-            </el-form-item>
-
-
-            <el-form-item label="沟通次数">
-              <el-input v-model="com.skype_count"></el-input>
-            </el-form-item>
-
-            <span style="float: right">
-              <el-button v-if="!edit_order" @click="edit_order=true">编辑</el-button>
-               <el-button v-else @click="save_com" type="primary">保存</el-button>
-            </span>
-            <br/>
-          </el-form>
-
-        </el-card>
-
-
-      </el-col>
     </el-row>
 
-    <br/>
+
 
   </div>
 </template>
@@ -303,12 +184,10 @@
     name: 'student-item',
     data() {
       return {
-        item: {},
-        order: {},
-        pro: {},
-        eng:{},
-        pol:{},
-        com:{},
+        item: {
+          pro:{}
+        },
+
         edit_item: true,
         edit_order: true,
         edit_pro: true,
@@ -337,108 +216,34 @@
         console.log(res, 'res')
 
         this.item = res.data
-      },
-
-      async save_item() {
-        this.start_loading()
-        let id = this.$route.query.id
-        let res = await request.put('/v1/api/student/' + id + '/', this.item)
-        console.log(res, 'res')
         this.end_loading()
-        this.item = res.data
       },
 
-      async fetch_order() {
-        let id = this.$route.query.id
-        let res = await request.get('/v1/api/order/' + id + '/')
-        console.log(res, 'order')
-        this.order = res.data
-      },
-      async save_order(){
-        this.start_loading()
-         let id = this.$route.query.id
-        let res = await request.put('/v1/api/order/' + id + '/', this.order)
-        console.log(res, 'res')
-        this.end_loading()
-        this.item = res.data
-      },
-
-      async fetch_pro() {
-        let id = this.order.id
-        let res = await request.get('/v1/api/pro/' + id + '/')
-        console.log(res, 'order')
-        this.pro = res.data
-      },
-       async save_pro(){
-        this.start_loading()
-         let id = this.order.id
-        let res = await request.put('/v1/api/pro/' + id + '/', this.pro)
-        console.log(res, 'res')
-         this.end_loading()
-        this.item = res.data
-      },
-
-
-      async fetch_eng() {
-        let id = this.order.id
-        let res = await request.get('/v1/api/eng/' + id + '/')
-        console.log(res, 'order')
-        this.eng = res.data
-      },
-       async save_eng(){
-        this.start_loading()
-        let id = this.order.id
-        let res = await request.put('/v1/api/eng/' + id + '/', this.eng)
-        console.log(res, 'res')
-         this.end_loading()
-        this.item = res.data
-      },
-
-      async fetch_com() {
-        let id = this.order.id
-        let res = await request.get('/v1/api/com/' + id + '/')
-        console.log(res, 'order')
-        this.com = res.data
-      },
-       async save_com(){
-        this.start_loading()
-        let id = this.order.id
-        let res = await request.put('/v1/api/com/' + id + '/', this.com)
-        console.log(res, 'res')
-         this.end_loading()
-        this.item = res.data
-      },
-
-      async fetch_pol() {
-        let id = this.order.id
-        let res = await request.get('/v1/api/pol/' + id + '/')
-        console.log(res, 'order')
-        this.pol = res.data
-      },
-       async save_pol(){
-        this.start_loading()
-        let id = this.order.id
-        let res = await request.put('/v1/api/pol/' + id + '/', this.pol)
-        console.log(res, 'res')
-         this.end_loading()
-        this.pol = res.data
-      },
       async fetch_teacher(){
         let res = await request.get('/v1/api/teacher/' )
-        console.log(res, 'res')
         this.teacher_list = res.data.list
-      }
+      },
+
+      async save_item(){
+        try {
+            this.start_loading()
+          let id = this.$route.query.id
+        let res = await request.put('/v1/api/student/'+id+'/',this.item)
+        this.item = res.item
+        this.end_loading()
+        }catch (e) {
+          this.end_loading()
+        }
+
+      },
+
+
     },
     async mounted() {
-
+      this.start_loading()
       await this.fetch_teacher()
       this.fetch()
-      await this.fetch_order()
 
-      this.fetch_pro()
-      this.fetch_eng()
-      this.fetch_com()
-      this.fetch_pol()
 
     }
   }

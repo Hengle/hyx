@@ -12,14 +12,7 @@ from django.db import models
 
 
 
-
-
-
-
-
-
-
-class UiTeacher(models.Model):
+class Teacher(models.Model):
     name = models.CharField(max_length=11, blank=True, null=True)
     sex = models.IntegerField(blank=True, null=True)
     mobile = models.CharField(max_length=11, blank=True, null=True)
@@ -53,7 +46,7 @@ class UiTeacher(models.Model):
 
     class Meta:
         managed = True
-        db_table = 'ui_teacher'
+        db_table = 'teacher'
         ordering = ['-create_time', '-update_time']
 
     def __str__(self):
@@ -61,10 +54,23 @@ class UiTeacher(models.Model):
 
     @property
     def student(self):
-        return self.uistudent_set.all()
+        return self.student_set.all()
 
 
-class UiStudent(models.Model):
+
+lesson_base =  dict(
+    id=False,
+    type=False,
+    teacher_name=False,
+    assistant_name=False,
+    skype_count=False,
+    skype_count_now=False,
+    fee=False,
+    if_protocol=False,
+    class_level=False
+)
+
+class Student(models.Model):
     name = models.CharField(max_length=11, blank=True, null=True)
     if_old_major = models.IntegerField(blank=True, null=True)
     sex = models.IntegerField(blank=True, null=True)
@@ -83,94 +89,71 @@ class UiStudent(models.Model):
     author = models.CharField(max_length=20, blank=True, null=True)
     remark = models.TextField(blank=True, null=True)
     extend = models.TextField(blank=True, null=True)
-    create_time = models.DateTimeField(blank=True, null=True, auto_now=True)
-    update_time = models.DateTimeField(blank=True, null=True, auto_now=True)
-    teacher = models.ForeignKey(UiTeacher,null=True,blank=True,on_delete=models.SET_NULL)
+
+    teacher = models.ForeignKey(Teacher,null=True,blank=True,on_delete=models.SET_NULL)
     email_sent = models.BooleanField(default=False)
     major_sent = models.IntegerField(null=True,blank=True)
     public_sent = models.IntegerField(null=True,blank=True)
+    order_style = models.IntegerField(blank=True, null=True)
+    target_school = models.CharField(max_length=20, blank=True, null=True)
+    target_major = models.CharField(max_length=20, blank=True, null=True)
+
+    create_time = models.DateTimeField(blank=True, null=True, auto_now=True)
+    update_time = models.DateTimeField(blank=True, null=True, auto_now=True)
+
 
     class Meta:
         managed = True
-        db_table = 'ui_student'
+        db_table = 'student'
         ordering = ['-create_time', '-update_time']
+
+
+    @property
+    def pro(self):
+        if self.lesson_set.filter(type='pro').exists():
+            return self.lesson_set.get(type='pro')
+        else:
+            return lesson_base
+
+    @property
+    def com(self):
+        if self.lesson_set.filter(type='com').exists():
+            return self.lesson_set.get(type='com')
+        else:
+            return lesson_base
+
+    @property
+    def eng(self):
+        if self.lesson_set.filter(type='eng').exists():
+            return self.lesson_set.get(type='eng')
+        else:
+            return lesson_base
+
+    @property
+    def pol(self):
+        if self.lesson_set.filter(type='pol').exists():
+            return self.lesson_set.get(type='pol')
+        else:
+            return lesson_base
 
     def __str__(self):
         return self.name
 
 
-class OiOrder(models.Model):
-    student = models.ForeignKey(UiStudent, on_delete=models.SET_NULL, blank=True, null=True)
-    order_style = models.IntegerField(blank=True, null=True)
-    target_school = models.CharField(max_length=20, blank=True, null=True)
-    target_major = models.CharField(max_length=20, blank=True, null=True)
-    create_time = models.DateTimeField(blank=True, null=True, auto_now=True)
-    update_time = models.DateTimeField(blank=True, null=True, auto_now=True)
 
+class Lesson(models.Model):
+    student = models.ForeignKey(Student,on_delete= models.SET_NULL, blank=True, null=True)
+    class_level = models.IntegerField(blank=True, null=True)
+    teacher_name = models.CharField(max_length=20, blank=True, null=True)
+    assistant_name = models.CharField(max_length=20, blank=True, null=True)
+    skype_count = models.IntegerField(blank=True, null=True)
+    skype_count_now = models.IntegerField(blank=True, null=True)
+    fee = models.IntegerField(blank=True, null=True)
+    type = models.CharField(max_length=128,null=True,blank=True)
+    if_protocol = models.IntegerField(blank=True, null=True)
+    create_time = models.DateTimeField(blank=True, null=True)
+    update_time = models.DateTimeField(blank=True, null=True)
     class Meta:
-        db_table = 'oi_order'
+        db_table = 'lesson'
         ordering = ['-create_time', '-update_time']
 
-class OiClassProfessional(models.Model):
-    order = models.ForeignKey(OiOrder,on_delete= models.SET_NULL, blank=True, null=True)
-    class_level = models.IntegerField(blank=True, null=True)
-    teacher_name = models.CharField(max_length=20, blank=True, null=True)
-    assistant_name = models.CharField(max_length=20, blank=True, null=True)
-    skype_count = models.IntegerField(blank=True, null=True)
-    skype_count_now = models.IntegerField(blank=True, null=True)
-    fee = models.IntegerField(blank=True, null=True)
-    if_protocol = models.IntegerField(blank=True, null=True)
-    create_time = models.DateTimeField(blank=True, null=True)
-    update_time = models.DateTimeField(blank=True, null=True)
-
-    class Meta:
-
-        db_table = 'oi_class_professional'
-
-
-
-class OiClassCommon(models.Model):
-    order = models.ForeignKey(OiOrder,on_delete=models.SET_NULL,blank=True, null=True)
-    class_level = models.IntegerField(blank=True, null=True)
-    teacher_name = models.CharField(max_length=20, blank=True, null=True)
-    assistant_name = models.CharField(max_length=20, blank=True, null=True)
-    skype_count = models.IntegerField(blank=True, null=True)
-    skype_count_now = models.IntegerField(blank=True, null=True)
-    fee = models.IntegerField(blank=True, null=True)
-    create_time = models.DateTimeField(blank=True, null=True)
-    update_time = models.DateTimeField(blank=True, null=True)
-
-    class Meta:
-        db_table = 'oi_class_common'
-
-
-class OiClassCommonEnglish(models.Model):
-    order = models.ForeignKey(OiOrder,on_delete= models.SET_NULL, blank=True, null=True)
-    class_level = models.IntegerField(blank=True, null=True)
-    teacher_name = models.CharField(max_length=20, blank=True, null=True)
-    assistant_name = models.CharField(max_length=20, blank=True, null=True)
-    skype_count = models.IntegerField(blank=True, null=True)
-    skype_count_now = models.IntegerField(blank=True, null=True)
-    fee = models.IntegerField(blank=True, null=True)
-    if_protocol = models.IntegerField(blank=True, null=True)
-    create_time = models.DateTimeField(blank=True, null=True)
-    update_time = models.DateTimeField(blank=True, null=True)
-
-    class Meta:
-        db_table = 'oi_class_common_english'
-
-
-class OiClassCommonPolitic(models.Model):
-    order = models.ForeignKey(OiOrder, on_delete=models.SET_NULL, blank=True, null=True)
-    class_level = models.IntegerField(blank=True, null=True)
-    teacher_name = models.CharField(max_length=20, blank=True, null=True)
-    assistant_name = models.CharField(max_length=20, blank=True, null=True)
-    skype_count = models.IntegerField(blank=True, null=True)
-    skype_count_now = models.IntegerField(blank=True, null=True)
-    fee = models.IntegerField(blank=True, null=True)
-    if_protocol = models.IntegerField(blank=True, null=True)
-    create_time = models.DateTimeField(blank=True, null=True)
-    update_time = models.DateTimeField(blank=True, null=True)
-
-    class Meta:
-        db_table = 'oi_class_common_politic'

@@ -2,10 +2,26 @@ from restless.dj import DjangoResource
 from restless.preparers import FieldsPreparer,SubPreparer,CollectionSubPreparer
 
 
-from ky.models import UiStudent,UiTeacher
+from ky.models import Student,Teacher,Lesson
 from ky.api.base import Base
 
-class Student(Base):
+class StudentAPI(Base):
+    lesson_preparer = FieldsPreparer(fields={
+        "id":'id',
+        "type":'type',
+        "teacher_name":'teacher_name',
+        "assistant_name":'assistant_name',
+        "skype_count":"skype_count",
+        "fee":"fee",
+        "class_level":"class_level",
+        "if_protocol":"if_protocol"
+    })
+
+    teacher_preparer = FieldsPreparer(fields={
+        "id":"id",
+        "name":"name"
+    })
+
     preparer = FieldsPreparer(fields={
         'id': 'id',
         'name': 'name',
@@ -33,13 +49,17 @@ class Student(Base):
         'public_sent':'public_sent',
         'create_time':'create_time',
         'update_time':'update_time',
+        'pro':SubPreparer('pro', lesson_preparer),
+        'com': SubPreparer('com', lesson_preparer),
+        'eng': SubPreparer('pro', lesson_preparer),
+        'pol': SubPreparer('com', lesson_preparer),
     })
 
     def list(self):
-        return UiStudent.objects.filter(name__contains=self.request.GET.get('search', ''))
+        return Student.objects.filter(name__contains=self.request.GET.get('search', ''))
 
     def detail(self, pk):
-        return UiStudent.objects.get(id=pk)
+        return Student.objects.get(id=pk)
 
     def create(self):
         pass
@@ -47,7 +67,7 @@ class Student(Base):
     def update(self,pk):
 
 
-        student = UiStudent.objects.get(id=pk)
+        student = Student.objects.get(id=pk)
         student.name = self.data['name'] if 'time' in self.data else student.name
         student.if_old_major = self.data['if_old_major'] if 'if_old_major' in self.data else student.if_old_major
         student.sex = self.data['sex'] if 'sex' in self.data else student.sex
@@ -75,7 +95,31 @@ class Student(Base):
         student.email_sent = self.data['email_sent'] if 'email_sent' in self.data else student.email_sent
         student.public_sent = self.data['public_sent'] if 'public_sent' in self.data else student.public_sent
 
-        student.teacher = UiTeacher.objects.get(id=int(self.data['teacher_id'])) if 'teacher_id' in self.data and self.data['teacher_id'] else student.teacher
+        student.target_major = self.data['target_major'] if 'target_major' in self.data else student.target_major
+        student.target_school = self.data['target_school'] if 'target_school' in self.data else student.target_school
+
+
+
+        if 'pro' in self.data:
+            data = self.data['pro']
+            (pro,pro_bool) = Lesson.objects.get_or_create(student=student,type='pro')
+
+            if data['teacher_name']:
+                pro.teacher_name = data['teacher_name']
+            if data['assistant_name']:
+                pro.assistant_name = data['assistant_name']
+            if data['skype_count']:
+                pro.skype_count = data['skype_count']
+            if data['fee']:
+                pro.fee = data['fee']
+            if 'skype_count_now' in data and data['skype_count_now']:
+                pro.skype_count_now = data['skype_count_now']
+            if data['if_protocol']:
+                pro.if_protocol = data['if_protocol']
+
+            pro.save()
+
+        student.teacher = Teacher.objects.get(id=int(self.data['teacher_id'])) if 'teacher_id' in self.data and self.data['teacher_id'] else student.teacher
         student.save()
         return student
 

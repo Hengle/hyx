@@ -1,8 +1,7 @@
 <template>
   <div class="student-item">
 
-    <el-form :inline="true" class="demo-form-inline" :loading="loading" size="mini">
-
+    <el-form :inline="true" class="demo-form-inline"  size="mini">
 
       <el-form-item>
         <el-button-group>
@@ -17,7 +16,12 @@
      <el-form-item>
         <el-button @click="  upload  " size="mini">上传</el-button>
       </el-form-item>
+
+
     </el-form>
+
+    <el-progress :text-inside="true" :stroke-width="18" :percentage="per" status="success"></el-progress>
+    <br/>
 
     <el-table
       :data="list"
@@ -44,7 +48,12 @@
       <el-table-column prop="old_school" label="本科学校"></el-table-column>
       <!--<el-table-column prop="remark" label="备注"></el-table-column>-->
 
-<el-table-column prop="status" label="状态"></el-table-column>
+  <el-table-column prop="status" label="状态">
+      <template scope="scope">
+          <p style="color: rgba(0,0,0,0.3)" v-if="scope.row.status =='准备上传' ">{{scope.row.status}}</p>
+          <p style="color: #1ab394" v-else>{{scope.row.status}}</p>
+      </template>
+  </el-table-column>
 
       <!--<el-table-column label="操作" width="250">-->
         <!--<template scope="scope">-->
@@ -59,14 +68,16 @@
 </template>
 <script>
   import request from 'axios'
-
+  import Vue from 'vue'
   let loading
   var basic = require('../stableDict')
   export default {
     name: 'teacher-item',
     data() {
       return {
-        list:[]
+        list:[],
+        per:0,
+        num:0
       }
     },
     methods: {
@@ -102,7 +113,7 @@
             obj.adviser = obj['招生顾问']
             obj.target_school = obj['报考学校']
             obj.name = obj['姓名']
-            obj.class_level = obj['班型']
+            obj.pro_class_level = obj['班型']
             obj.public_class = obj['公共课']
             obj.due_year = obj['届']
             obj.qq = obj['qq']
@@ -127,15 +138,30 @@
             obj.status = '准备上传'
             return obj
           })
-          console.log(list,'---')
+
           that.list = list
         };
         reader.readAsBinaryString(file);
       },
 
       async upload(){
-        let res = await request.post('/v1/excel/student_upload',this.list)
-        this.list = res.data.list
+        var that = this
+         let r = function (i) {
+
+
+         request.post('/v1/excel/student_upload',that.list[i]).then(function (res) {
+            Vue.set(that.list,i,res.data)
+           that.num = that.num +1
+
+           that.per = that.num*100/that.list.length
+          })
+        }
+        for(var i=0;i<this.list.length;i++){
+            r(i)
+        }
+
+
+
       }
 
     },
