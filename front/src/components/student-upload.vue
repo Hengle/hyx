@@ -40,11 +40,10 @@
 
 
       <el-table-column prop="apply_time" label="报班时间"></el-table-column>
-
       <el-table-column prop="adviser" label="招生顾问"></el-table-column>
       <el-table-column prop="target_school" label="报考学校"></el-table-column>
-    <el-table-column prop="name" label="姓名"></el-table-column>
- <el-table-column prop="class_level" label="班型"></el-table-column>
+      <el-table-column prop="name" label="姓名"></el-table-column>
+      <el-table-column prop="class_level" label="班型"></el-table-column>
       <el-table-column prop="public_class" label="公共课"></el-table-column>
       <el-table-column prop="due_year" label="届"></el-table-column>
       <el-table-column prop="qq" label="qq"></el-table-column>
@@ -108,7 +107,6 @@
 
       },
 
-
       onchange(f) {
         var that = this
         let file = f.target.files[0], name = file.name,reader = new FileReader();
@@ -117,10 +115,16 @@
           let wb = XLSX.read(data, {type: "binary"});
           let list = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]])
           list = list.map(function (obj) {
-            console.log(obj)
+
+
             obj.apply_time = obj['报班时间']
             obj.adviser = obj['招生顾问']
-            obj.target_school = obj['报考学校']
+
+
+            let index = basic.schoolMap[0].indexOf(obj['报考学校'])
+
+            obj['target_school'] = basic.schoolMap[1][index]
+            console.log(obj.target_school,basic.schoolMap[obj['报考学校']])
             obj.name = obj['姓名']
             obj.pro_class_level = obj['班型']
             obj.public_class = obj['公共课']
@@ -159,8 +163,6 @@
       async upload(){
         var that = this
          let r = function (i) {
-
-
          request.post('/v1/excel/student_upload',that.list[i]).then(function (res) {
             that.success = that.success +1
           }).catch(function (e) {
@@ -171,8 +173,6 @@
         for(var i=0;i<this.list.length;i++){
             r(i)
         }
-
-
 
       }
 

@@ -38,11 +38,7 @@ urlpatterns = [
     path('dev/', dev),
     path('v1/api/student/', include(StudentAPI.urls())),
     path('v1/api/teacher/', include(TeacherAPI.urls())),
-    # path('v1/api/lesson/', include(Order.urls())),
-    # path('v1/api/pro/', include(Pro.urls())),
-    # path('v1/api/com/', include(Com.urls())),
-    # path('v1/api/eng/', include(Eng.urls())),
-    # path('v1/api/pol/', include(Pol.urls())),
+
 
     path('v1/excel/teacher_template',teacher_template),
     path('v1/excel/teacher_upload', teacher_upload),

@@ -65,7 +65,6 @@ lesson_base =  dict(
     assistant_name=False,
     skype_count=False,
     skype_count_now=False,
-    fee=False,
     if_protocol=False,
     class_level=False
 )
@@ -95,8 +94,9 @@ class Student(models.Model):
     major_sent = models.IntegerField(null=True,blank=True)
     public_sent = models.IntegerField(null=True,blank=True)
     order_style = models.IntegerField(blank=True, null=True)
+
     target_school = models.CharField(max_length=20, blank=True, null=True)
-    target_major = models.CharField(max_length=20, blank=True, null=True)
+    # target_major = models.CharField(max_length=20, blank=True, null=True)
 
     create_time = models.DateTimeField(blank=True, null=True, auto_now=True)
     update_time = models.DateTimeField(blank=True, null=True, auto_now=True)
@@ -148,7 +148,7 @@ class Lesson(models.Model):
     assistant_name = models.CharField(max_length=20, blank=True, null=True)
     skype_count = models.IntegerField(blank=True, null=True)
     skype_count_now = models.IntegerField(blank=True, null=True)
-    fee = models.IntegerField(blank=True, null=True)
+    # fee = models.IntegerField(blank=True, null=True)
     type = models.CharField(max_length=128,null=True,blank=True)
     if_protocol = models.IntegerField(blank=True, null=True)
     create_time = models.DateTimeField(blank=True, null=True)

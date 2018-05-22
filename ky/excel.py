@@ -59,6 +59,8 @@ pro_list = [
     { "id": 7, "name": "培优全程", "skype_count": 0 },
   ]
 
+pro_map=['9999','32','24','16','8','0','0']
+
 def get_pro_id(name):
     for i in range(len(pro_list)):
         if pro_list[i]['name'] == name:
@@ -83,11 +85,13 @@ def student_upload(request):
     if 'pro_class_level' in item:
         (lesson,lesson_bool) = Lesson.objects.get_or_create(student=student,type='pro')
         lesson.class_level = get_pro_id(item['pro_class_level'])
+        lesson.skype_count = pro_map[lesson.class_level]
         lesson.type = 'pro'
         if lesson_bool:
             item['status'] = item['status'] + '创建班型'
         else:
             item['status'] = item['status'] + '更新班型'
+
         lesson.save()
 
     # public_class

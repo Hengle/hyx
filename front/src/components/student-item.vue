@@ -110,14 +110,7 @@
               </el-radio-group>
             </el-form-item>
 
-             <el-form-item label="目标学校：">
-              <el-input v-if="edit_order" v-model="item.target_school"></el-input>
-              <span v-else> {{order.target_school}}</span>
-            </el-form-item>
-            <el-form-item label="目标专业：">
-              <el-input v-if="edit_order" v-model="item.target_major"></el-input>
-              <span v-else> {{order.target_major}}</span>
-            </el-form-item>
+
 
             <el-form-item label="备注：">
               <el-input v-if="edit_item" v-model="item.remark" type="textarea" rows="6"></el-input>
@@ -133,9 +126,6 @@
 
             </el-form-item>
 
-            <el-form-item label="费用">
-              <el-input v-model="item.pro.fee"></el-input>
-            </el-form-item>
 
             <el-form-item label="一共沟通次数">
               <el-input v-model="item.pro.skype_count"></el-input>

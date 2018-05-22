@@ -33,7 +33,8 @@ DEBUG = True if hostname=='suruideiMac.local' else False
 
 ALLOWED_HOSTS = [
     '101.200.129.112',
-    'localhost'
+    'localhost',
+    '127.0.0.1'
 ]
 
 

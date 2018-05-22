@@ -10,8 +10,7 @@ class Order(Base):
         'id': 'id',
         'student_name':'student_id_fk.name',
         'order_style':'order_style',
-        'target_school':'target_school',
-        'target_major':'target_major',
+
         'create_time':'create_time',
         'update_time':'update_time'
     })

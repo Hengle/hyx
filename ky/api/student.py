@@ -12,7 +12,7 @@ class StudentAPI(Base):
         "teacher_name":'teacher_name',
         "assistant_name":'assistant_name',
         "skype_count":"skype_count",
-        "fee":"fee",
+        # "fee":"fee",
         "class_level":"class_level",
         "if_protocol":"if_protocol"
     })
@@ -56,7 +56,8 @@ class StudentAPI(Base):
     })
 
     def list(self):
-        return Student.objects.filter(name__contains=self.request.GET.get('search', ''))
+
+        return Student.objects.filter(name__icontains=self.request.GET['search'])
 
     def detail(self, pk):
         return Student.objects.get(id=pk)
@@ -95,7 +96,7 @@ class StudentAPI(Base):
         student.email_sent = self.data['email_sent'] if 'email_sent' in self.data else student.email_sent
         student.public_sent = self.data['public_sent'] if 'public_sent' in self.data else student.public_sent
 
-        student.target_major = self.data['target_major'] if 'target_major' in self.data else student.target_major
+        # student.target_major = self.data['target_major'] if 'target_major' in self.data else student.target_major
         student.target_school = self.data['target_school'] if 'target_school' in self.data else student.target_school
 
 
@@ -106,6 +107,7 @@ class StudentAPI(Base):
 
             if data['teacher_name']:
                 pro.teacher_name = data['teacher_name']
+
             if data['assistant_name']:
                 pro.assistant_name = data['assistant_name']
             if data['skype_count']:
