@@ -60,13 +60,13 @@ class Teacher(models.Model):
 
 lesson_base =  dict(
     id=False,
-    type=False,
-    teacher_name=False,
-    assistant_name=False,
-    skype_count=False,
-    skype_count_now=False,
-    if_protocol=False,
-    class_level=False
+    type='',
+    teacher_name='',
+    assistant_name='',
+    skype_count='',
+    skype_count_now='',
+    if_protocol='',
+    class_level=''
 )
 
 class Student(models.Model):

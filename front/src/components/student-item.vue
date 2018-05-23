@@ -2,9 +2,13 @@
   <div class="student-item">
     <el-row :gutter="20">
 
+
         <el-card class="box-card">
-          <h3>基本信息</h3>
-          <el-form size="mini" label-width="100">
+          <el-row :gutter="100">
+            <el-col :span="12">
+                <h3>基本信息</h3>
+
+          <el-form size="mini" label-width="150px">
             <el-form-item label="姓名:">
               <el-input v-if="edit_item" v-model="item.name"></el-input>
               <span v-else>{{item.name}}</span>
@@ -112,12 +116,18 @@
 
 
 
-            <el-form-item label="备注：">
+            <el-form-item label="备注：" >
               <el-input v-if="edit_item" v-model="item.remark" type="textarea" rows="6"></el-input>
               <span v-else> {{item.remark}}</span>
             </el-form-item>
 
-              <h3>专业课报班级信息</h3>
+          </el-form>
+            </el-col>
+
+            <el-col :span="12">
+
+            <el-form size="mini" label-width="150px">
+               <h3>专业课报班级信息</h3>
 
                  <el-form-item label="报班级别：">
               <el-select v-model="item.pro.class_level" v-if="edit_item">
@@ -131,9 +141,7 @@
               <el-input v-model="item.pro.skype_count"></el-input>
             </el-form-item>
 
-            <el-form-item label="现在沟通次数">
-              <el-input v-model="item.pro.skype_count_now"></el-input>
-            </el-form-item>
+
 
               <el-form-item label="老师名字">
               <el-input v-model="item.pro.teacher_name"></el-input>
@@ -149,12 +157,128 @@
                 <el-radio-button :label="0">否</el-radio-button>
               </el-radio-group>
             </el-form-item>
+            </el-form>
+
+
+
+
             <br/>
-            <span style="float: right">
+
+            <el-form  size="mini" label-width="150px">
+               <h3>英语课报班级信息</h3>
+
+                 <el-form-item label="报班级别：">
+              <el-select v-model="item.eng.class_level" v-if="edit_item">
+                <el-option v-for="item in basic.classLevelProfessional" :label="item.name" :value="item.id"></el-option>
+              </el-select>
+
+            </el-form-item>
+
+
+            <el-form-item label="一共沟通次数">
+              <el-input v-model="item.eng.skype_count"></el-input>
+            </el-form-item>
+
+
+              <el-form-item label="老师名字">
+              <el-input v-model="item.eng.teacher_name"></el-input>
+            </el-form-item>
+
+              <el-form-item label="助手名字">
+              <el-input v-model="item.eng.assistant_name"></el-input>
+            </el-form-item>
+
+            <el-form-item label="是否签协议">
+              <el-radio-group v-model="item.eng.if_protocol">
+                <el-radio-button :label="1">是</el-radio-button>
+                <el-radio-button :label="0">否</el-radio-button>
+              </el-radio-group>
+            </el-form-item>
+            </el-form>
+
+            <br/>
+
+            <el-form  size="mini" label-width="150px">
+               <h3>政治课报班级信息</h3>
+
+                 <el-form-item label="报班级别：">
+              <el-select v-model="item.pol.class_level" v-if="edit_item">
+                <el-option v-for="item in basic.classLevelProfessional" :label="item.name" :value="item.id"></el-option>
+              </el-select>
+
+            </el-form-item>
+
+
+            <el-form-item label="一共沟通次数">
+              <el-input v-model="item.pol.skype_count"></el-input>
+            </el-form-item>
+
+
+              <el-form-item label="老师名字">
+              <el-input v-model="item.pol.teacher_name"></el-input>
+            </el-form-item>
+
+              <el-form-item label="助手名字">
+              <el-input v-model="item.pol.assistant_name"></el-input>
+            </el-form-item>
+
+            <el-form-item label="是否签协议">
+              <el-radio-group v-model="item.pol.if_protocol">
+                <el-radio-button :label="1">是</el-radio-button>
+                <el-radio-button :label="0">否</el-radio-button>
+              </el-radio-group>
+            </el-form-item>
+            </el-form>
+
+                   <br/>
+
+            <el-form  size="mini" label-width="150px">
+               <h3>公共课报班级信息</h3>
+
+                 <el-form-item label="报班级别：">
+              <el-select v-model="item.com.class_level" v-if="edit_item">
+                <el-option v-for="item in basic.classLevelProfessional" :label="item.name" :value="item.id"></el-option>
+              </el-select>
+
+            </el-form-item>
+
+
+            <el-form-item label="一共沟通次数">
+              <el-input v-model="item.com.skype_count"></el-input>
+            </el-form-item>
+
+
+              <el-form-item label="老师名字">
+              <el-input v-model="item.com.teacher_name"></el-input>
+            </el-form-item>
+
+              <el-form-item label="助手名字">
+              <el-input v-model="item.com.assistant_name"></el-input>
+            </el-form-item>
+
+            <el-form-item label="是否签协议">
+              <el-radio-group v-model="item.com.if_protocol">
+                <el-radio-button :label="1">是</el-radio-button>
+                <el-radio-button :label="0">否</el-radio-button>
+              </el-radio-group>
+            </el-form-item>
+            </el-form>
+
+            </el-col>
+
+
+          </el-row>
+
+
+
+
+
+           <span style="float: right">
               <el-button v-if="!edit_item" @click="edit_item=true">编辑</el-button>
-               <el-button v-else @click="save_item" type="primary">保存</el-button>
+               <el-button v-else @click="save_item" type="primary" size="mini">保存</el-button>
+              <br/>
             </span>
-          </el-form>
+          <br/>
         </el-card>
 
 
