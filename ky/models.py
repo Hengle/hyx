@@ -63,10 +63,10 @@ lesson_base =  dict(
     type='',
     teacher_name='',
     assistant_name='',
-    skype_count='',
-    skype_count_now='',
+    skype_count=0,
+
     if_protocol='',
-    class_level=''
+    class_level=7
 )
 
 class Student(models.Model):

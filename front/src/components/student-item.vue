@@ -176,6 +176,7 @@
 
 
             <el-form-item label="一共沟通次数">
+
               <el-input v-model="item.eng.skype_count"></el-input>
             </el-form-item>
 
@@ -299,7 +300,10 @@
     data() {
       return {
         item: {
-          pro:{}
+          pro:{},
+          eng:{},
+          pol:{},
+          com:{}
         },
 
         edit_item: true,
@@ -344,6 +348,7 @@
           let id = this.$route.query.id
         let res = await request.put('/v1/api/student/'+id+'/',this.item)
         this.item = res.item
+
         this.end_loading()
         }catch (e) {
           this.end_loading()

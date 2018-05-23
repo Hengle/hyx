@@ -112,12 +112,69 @@ class StudentAPI(Base):
                 pro.assistant_name = data['assistant_name']
             if data['skype_count']:
                 pro.skype_count = data['skype_count']
-            if data['fee']:
-                pro.fee = data['fee']
-            if 'skype_count_now' in data and data['skype_count_now']:
-                pro.skype_count_now = data['skype_count_now']
+            if data['class_level']:
+                pro.skype_count = data['class_level']
+
             if data['if_protocol']:
                 pro.if_protocol = data['if_protocol']
+
+            pro.save()
+
+        if 'com' in self.data:
+            data = self.data['com']
+            (com,pro_bool) = Lesson.objects.get_or_create(student=student,type='com')
+
+            if data['teacher_name']:
+                com.teacher_name = data['teacher_name']
+
+            if data['assistant_name']:
+                com.assistant_name = data['assistant_name']
+            if data['skype_count']:
+                com.skype_count = data['skype_count']
+            if data['class_level']:
+                com.skype_count = data['class_level']
+
+
+            if data['if_protocol']:
+                com.if_protocol = data['if_protocol']
+
+            com.save()
+
+        if 'pol' in self.data:
+            data = self.data['pro']
+            (pol,pro_bool) = Lesson.objects.get_or_create(student=student,type='pol')
+
+            if data['teacher_name']:
+                pol.teacher_name = data['teacher_name']
+
+            if data['assistant_name']:
+                pol.assistant_name = data['assistant_name']
+            if data['skype_count']:
+                pol.skype_count = data['skype_count']
+
+            if data['class_level']:
+                pol.skype_count = data['class_level']
+            if data['if_protocol']:
+                pol.if_protocol = data['if_protocol']
+
+            pol.save()
+
+        if 'eng' in self.data:
+            data = self.data['pro']
+            (eng,pro_bool) = Lesson.objects.get_or_create(student=student,type='eng')
+
+            if data['teacher_name']:
+                eng.teacher_name = data['teacher_name']
+
+            if data['assistant_name']:
+                eng.assistant_name = data['assistant_name']
+            if data['skype_count']:
+                eng.skype_count = data['skype_count']
+            if data['class_level']:
+                eng.skype_count = data['class_level']
+
+            if data['if_protocol']:
+                eng.if_protocol = data['if_protocol']
 
             pro.save()
 
