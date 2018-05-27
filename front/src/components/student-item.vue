@@ -139,17 +139,10 @@
 
             <el-form-item label="一共沟通次数">
               <el-input v-model="item.pro.skype_count"></el-input>
-            </el-form-item>
+           </el-form-item>
 
 
-
-              <el-form-item label="老师名字">
-              <el-input v-model="item.pro.teacher_name"></el-input>
-            </el-form-item>
-
-              <el-form-item label="助手名字">
-              <el-input v-model="item.pro.assistant_name"></el-input>
-            </el-form-item>
+           
 
             <el-form-item label="是否签协议">
               <el-radio-group v-model="item.pro.if_protocol">
@@ -178,16 +171,9 @@
             <el-form-item label="一共沟通次数">
 
               <el-input v-model="item.eng.skype_count"></el-input>
-            </el-form-item>
+             </el-form-item>
 
-
-              <el-form-item label="老师名字">
-              <el-input v-model="item.eng.teacher_name"></el-input>
-            </el-form-item>
-
-              <el-form-item label="助手名字">
-              <el-input v-model="item.eng.assistant_name"></el-input>
-            </el-form-item>
+          
 
             <el-form-item label="是否签协议">
               <el-radio-group v-model="item.eng.if_protocol">
@@ -215,14 +201,6 @@
             </el-form-item>
 
 
-              <el-form-item label="老师名字">
-              <el-input v-model="item.pol.teacher_name"></el-input>
-            </el-form-item>
-
-              <el-form-item label="助手名字">
-              <el-input v-model="item.pol.assistant_name"></el-input>
-            </el-form-item>
-
             <el-form-item label="是否签协议">
               <el-radio-group v-model="item.pol.if_protocol">
                 <el-radio-button :label="1">是</el-radio-button>
@@ -246,16 +224,8 @@
 
             <el-form-item label="一共沟通次数">
               <el-input v-model="item.com.skype_count"></el-input>
-            </el-form-item>
+             </el-form-item>
 
-
-              <el-form-item label="老师名字">
-              <el-input v-model="item.com.teacher_name"></el-input>
-            </el-form-item>
-
-              <el-form-item label="助手名字">
-              <el-input v-model="item.com.assistant_name"></el-input>
-            </el-form-item>
 
             <el-form-item label="是否签协议">
               <el-radio-group v-model="item.com.if_protocol">

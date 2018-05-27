@@ -49,7 +49,7 @@ class TeacherAPI(Base):
     })
 
     def list(self):
-        return Teacher.objects.filter(name__contains=self.request.GET.get('search', ''))
+        return Teacher.objects.filter(name__icontains=self.request.GET.get('search', ''))
 
     def detail(self, pk):
         return Teacher.objects.get(id=pk)

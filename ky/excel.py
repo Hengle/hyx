@@ -2,9 +2,8 @@ from django.http import HttpResponse,JsonResponse
 import xlwt
 import simplejson
 from ky.models import Teacher,Student,Lesson
-def teacher_template(request):
 
-
+def teacher_export(request):
     response = HttpResponse(content_type='application/ms-excel')
     response['Content-Disposition'] = 'attachment; filename="teacher-template.xls"'
     wb = xlwt.Workbook(encoding='utf-8')
@@ -13,6 +12,35 @@ def teacher_template(request):
     row_num=0
     for i in range(len(header)):
         ws.write(row_num, i, header[i])
+    return HttpResponse('hello teacher')
+
+def student_export(request):
+    return HttpResponse('hello student')
+    pass
+
+t_header = [
+        '姓名', '手机号','qq','手机号码',
+        '身份证号码','银行卡号','银行卡开户行',
+        '就职岗位','本科学校','本科专业','辅导院校',
+        '312具体院校','一战 OR 多战','“本专业”OR 跨专业',
+        '是否在职备考','是否录取','录取方式','入学年份',
+        '学习年制','学制类型','初试总分','专业课总分',
+        '英语分数','政治分数','初试排名','复试分数',
+        '复试排名','总排名','是否留任','生日','智囊团群','辅导工作群'
+        '微信群','协议书发出','协议书回收','校区群','培训记录','备注'
+        ]
+   
+def teacher_template(request):
+
+
+    response = HttpResponse(content_type='application/ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="teacher-template.xls"'
+    wb = xlwt.Workbook(encoding='utf-8')
+    ws = wb.add_sheet('sheet1')
+    row_num=0
+    for i in range(len(t_header)):
+        print(t_header[i])
+        ws.write(row_num, i, t_header[i])
     wb.save(response)
     return response
 

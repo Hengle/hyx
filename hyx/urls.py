@@ -20,7 +20,7 @@ from ky.api.student import StudentAPI
 from ky.api.teacher import TeacherAPI
 
 
-from ky.excel import teacher_template,teacher_upload,student_template,student_upload
+from ky.excel import teacher_template,teacher_upload,student_template,student_upload,student_export,teacher_export
 
 from django.http.response import HttpResponse
 from django.conf.urls import handler404, handler500
@@ -44,5 +44,7 @@ urlpatterns = [
     path('v1/excel/teacher_upload', teacher_upload),
     path('v1/excel/student_template', student_template),
     path('v1/excel/student_upload', student_upload),
+    path('v1/excel/student/export/', student_export),
+     path('v1/excel/teacher/export/', teacher_export),
     path('test/',test)
 ]
