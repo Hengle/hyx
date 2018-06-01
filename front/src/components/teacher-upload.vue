@@ -1,6 +1,13 @@
 <template>
   <div class="student-item">
-
+<el-form :inline="true">
+      <el-form-item label="总数据">{{total}}</el-form-item>
+      <el-form-item label="成功数">{{success}}</el-form-item>
+      <el-form-item label="失败数">{{error}}</el-form-item>
+    <el-form-item label="名字">
+         <span v-for="e in err_list">{{e}}&nbsp;&nbsp;</span>
+       </el-form-item>
+    </el-form>
     <el-form :inline="true" class="demo-form-inline" :loading="loading" size="mini">
 
 
@@ -56,7 +63,11 @@
     name: 'teacher-item',
     data() {
       return {
-        list:[]
+        list:[],
+        success:0,
+        total:0,
+        error:0,
+        err_list:[]
       }
     },
     methods: {
@@ -86,26 +97,30 @@
           let data = e.target.result;
           let wb = XLSX.read(data, {type: "binary"});
           let list = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]])
-          list = list.map(function (obj) {
-            obj.status = '等待上传'
-            obj.name = obj['姓名']
-            obj.mobile = obj['手机号']
-            obj.remark = obj['备注']
-            delete obj['姓名']
-            delete obj['手机号']
-            delete obj['备注']
 
-            return obj
-          })
-          console.log(list,'---')
           that.list = list
+          that.total = that.list.length
+          console.log(that.list)
         };
+
         reader.readAsBinaryString(file);
       },
 
       async upload(){
-        let res = await request.post('/v1/excel/teacher_upload',this.list)
-        this.list = res.data.list
+       var that = this
+         let r = function (i) {
+         request.post('/v1/excel/teacher_upload',that.list[i]).then(function (res) {
+            that.success = that.success +1
+          }).catch(function (e) {
+           // that.error=that.error+1
+           console.log('hllo')
+             that.error = that.error +1
+           that.err_list.push(that.list[i])
+         })
+        }
+        for(var i=0;i<this.list.length;i++){
+            r(i)
+        }
       }
 
     },

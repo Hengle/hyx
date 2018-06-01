@@ -17,7 +17,6 @@
         <el-button @click="  upload  " size="mini">上传</el-button>
       </el-form-item>
 
-
     </el-form>
     <el-form>
       <el-form-item label="总数据">{{total}}</el-form-item>
@@ -43,15 +42,15 @@
       <el-table-column prop="adviser" label="招生顾问"></el-table-column>
       <el-table-column prop="target_school" label="报考学校"></el-table-column>
       <el-table-column prop="name" label="姓名"></el-table-column>
-      <el-table-column prop="class_level" label="班型"></el-table-column>
-      <el-table-column prop="public_class" label="公共课"></el-table-column>
-      <el-table-column prop="due_year" label="届"></el-table-column>
+      <el-table-column prop="pro_class_level" label="班型"></el-table-column>
+      <!--<el-table-column prop="public_class" label="公共课"></el-table-column>-->
+      <el-table-column prop="due_year" label="在职或在读"></el-table-column>
       <el-table-column prop="qq" label="qq"></el-table-column>
       <el-table-column prop="mobile" label="电话"></el-table-column>
 
    <el-table-column prop="old_major" label="专业"></el-table-column>
       <el-table-column prop="old_school" label="本科学校"></el-table-column>
-      <!--<el-table-column prop="remark" label="备注"></el-table-column>-->
+      <el-table-column prop="remark" label="备注"></el-table-column>
 
   <!--<el-table-column prop="status" label="状态">-->
       <!--<template scope="scope">-->
@@ -115,7 +114,7 @@
           let wb = XLSX.read(data, {type: "binary"});
           let list = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]])
           list = list.map(function (obj) {
-
+            console.log(obj,'---')
 
             obj.apply_time = obj['报班时间']
             obj.adviser = obj['招生顾问']
@@ -127,10 +126,10 @@
             console.log(obj.target_school,basic.schoolMap[obj['报考学校']])
             obj.name = obj['姓名']
             obj.pro_class_level = obj['班型']
-            obj.public_class = obj['公共课']
-            obj.due_year = obj['届']
-            obj.qq = obj['qq']
-            obj.mobile = obj['电话']
+            // obj.public_class = obj['公共课']
+            obj.due_year = obj['在职或在读']
+            obj.qq = obj['QQ']
+            obj.mobile = obj['电话号码']
             obj.old_major = obj['专业']
             obj.old_school = obj['本科学校']
             obj.remark = obj['备注']

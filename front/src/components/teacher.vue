@@ -17,8 +17,9 @@
             <el-form-item>
                 <el-button-group>
                     <el-button type="primary" @click="fetch" size="mini">查询</el-button>
-                    <el-button @click="add_form.visible=true" size="mini">增加</el-button>
+                    <el-button @click="$router.push('/teaItem?action=create')" size="mini">增加</el-button>
                     <el-button @click="  $router.push('/teaUpload')  " size="mini">批量上传</el-button>
+                  <el-button @click="  loadout  " size="mini">导出老师数据</el-button>
                 </el-button-group>
             </el-form-item>
 
@@ -177,15 +178,10 @@
             change_page(p) {
                 console.log(p)
             },
-            open_edit(data) {
-                this.edit_form = {
-                    visible:true,
-                    name:data.name,
-                    sex:data.sex,
-                    mobile:data.mobile,
-                    qq:data.qq
-                }
+            loadout(){
+              location.href = '/v1/excel/teacher/export/'
             },
+
             async fetch() {
 
                 var page_size = this.page_size,
@@ -207,27 +203,7 @@
                 this.total = page.total
                 this.loading = false
             },
-            async add() {
-                console.log(this.add_form,'add_form')
-                try {
 
-                    var add_form = this.add_form
-                    var response = await request.post('/v1/api/teacher/', add_form)
-                    this.add_form.visible = false
-                    this.$message({
-                        type: 'success',
-                        message: '添加数据成功'
-                    });
-                    this.fetch()
-                } catch (e) {
-                    console.log(e)
-                    this.$message({
-                        type: 'error',
-                        message: e.error
-                    });
-                }
-
-            },
             async remove(data) {
 
                 try {
@@ -249,27 +225,8 @@
                         message: '已取消删除'
                     });
                 }
-
             },
-            async edit() {
-                try {
-                    await this.su_validate('edit_form')
-                    var edit_form = this.edit_form
-                    var id = edit_form.id
-                    this.$message({
-                        type: 'success',
-                        message: '修改信息成功!'
-                    });
-                    var response = await request.put('/v1/api/teacher/' + id + '/', edit_form)
-                    this.edit_form.visible = false
-                    this.fetch()
-                } catch (e) {
-                    this.$message({
-                        type: 'error',
-                        message: e.error
-                    });
-                }
-            }
+
         },
         mounted() {
             this.fetch()

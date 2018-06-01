@@ -45,6 +45,6 @@ urlpatterns = [
     path('v1/excel/student_template', student_template),
     path('v1/excel/student_upload', student_upload),
     path('v1/excel/student/export/', student_export),
-     path('v1/excel/teacher/export/', teacher_export),
+    path('v1/excel/teacher/export/', teacher_export),
     path('test/',test)
 ]
