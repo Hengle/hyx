@@ -1,9 +1,16 @@
 <template>
   <div class="student-item">
     <el-row :gutter="20">
-
+ 
 
         <el-card class="box-card">
+
+        <el-button-group>
+              <el-button v-if="!edit_item && !create" @click="edit_item=true" size='mini'>编辑</el-button>
+              <el-button v-if="edit_item && !create"  @click="update" type="primary" size="mini">保存</el-button>
+              <el-button  @click="post" type="primary" size="mini">提交</el-button>
+          </el-button-group>
+
           <el-row :gutter="100">
             <el-col :span="12">
                 <h3>基本信息</h3>
@@ -146,8 +153,8 @@
 
             <el-form-item label="是否签协议">
               <el-radio-group v-model="item.pro.if_protocol">
-                <el-radio-button :label="1">是</el-radio-button>
-                <el-radio-button :label="0">否</el-radio-button>
+                <el-radio-button label="1">是</el-radio-button>
+                <el-radio-button label="0">否</el-radio-button>
               </el-radio-group>
             </el-form-item>
             </el-form>
@@ -177,8 +184,8 @@
 
             <el-form-item label="是否签协议">
               <el-radio-group v-model="item.eng.if_protocol">
-                <el-radio-button :label="1">是</el-radio-button>
-                <el-radio-button :label="0">否</el-radio-button>
+                <el-radio-button label="1">是</el-radio-button>
+                <el-radio-button label="0">否</el-radio-button>
               </el-radio-group>
             </el-form-item>
             </el-form>
@@ -203,8 +210,8 @@
 
             <el-form-item label="是否签协议">
               <el-radio-group v-model="item.pol.if_protocol">
-                <el-radio-button :label="1">是</el-radio-button>
-                <el-radio-button :label="0">否</el-radio-button>
+                <el-radio-button label="1">是</el-radio-button>
+                <el-radio-button label="0">否</el-radio-button>
               </el-radio-group>
             </el-form-item>
             </el-form>
@@ -229,8 +236,8 @@
 
             <el-form-item label="是否签协议">
               <el-radio-group v-model="item.com.if_protocol">
-                <el-radio-button :label="1">是</el-radio-button>
-                <el-radio-button :label="0">否</el-radio-button>
+                <el-radio-button label="1">是</el-radio-button>
+                <el-radio-button label="0">否</el-radio-button>
               </el-radio-group>
             </el-form-item>
             </el-form>
@@ -240,16 +247,6 @@
 
           </el-row>
 
-
-
-
-
-           <span style="float: right">
-              <el-button v-if="!edit_item" @click="edit_item=true">编辑</el-button>
-               <el-button v-else @click="save_item" type="primary" size="mini">保存</el-button>
-              <br/>
-            </span>
-          <br/>
         </el-card>
 
 
@@ -273,14 +270,14 @@
           pro:{},
           eng:{},
           pol:{},
-          com:{}
+          com:{},
         },
-
-        edit_item: true,
-        edit_order: true,
-        edit_pro: true,
-        basic: basic,
-        teacher_list:[]
+          create:false,
+          edit_item: true,
+          edit_order: true,
+          edit_pro: true,
+          basic: basic,
+          teacher_list:[],
       }
     },
     methods: {
@@ -312,7 +309,7 @@
         this.teacher_list = res.data.list
       },
 
-      async save_item(){
+      async update(){
         try {
             this.start_loading()
           let id = this.$route.query.id
@@ -323,17 +320,37 @@
         }catch (e) {
           this.end_loading()
         }
+      },
 
+       async post(){
+        try {
+          this.start_loading()
+          let id = this.$route.query.id
+        let res = await request.post('/v1/api/student/',this.item)
+        this.item = res.item
+
+        this.end_loading()
+        this.$router.back()
+        }catch (e) {
+          this.end_loading()
+        }
       },
 
 
     },
     async mounted() {
-      this.start_loading()
-      await this.fetch_teacher()
-      this.fetch()
+    
 
-
+     if(this.$route.query.action == 'create'){
+        this.create = true
+        this.edit_item = true
+      }else {
+        this.start_loading()
+        await this.fetch_teacher()
+        this.fetch()
+        this.edit_item = false
+        this.create = false
+      }
     }
   }
 </script>

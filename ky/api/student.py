@@ -63,7 +63,132 @@ class StudentAPI(Base):
         return Student.objects.get(id=pk)
 
     def create(self):
-        pass
+
+        student = Student()
+        
+        if 'name' in self.data:
+            student.name = self.data['name']
+        if 'if_old_major' in self.data:
+            student.if_old_major = self.data['if_old_major']
+        if 'sex' in self.data:
+            student.sex = self.data['sex']
+        if 'qq' in self.data:
+            student.qq = self.data['qq']
+        if 'mobile' in self.data:
+            student.mobile = self.data['mobile']
+        if 'adviser' in self.data:
+            student.adviser = self.data['adviser']
+        if 'due_year' in self.data:
+            student.due_year = self.data['due_year']
+        if 'old_school' in self.data:
+            student.old_school = self.data['old_school']
+        if 'old_major' in self.data:
+            student.old_major = self.data['old_major']
+        if 'study_status' in self.data:
+            student.study_status = self.data['study_status']
+        if 'study_status' in self.data:
+            student.study_status = self.data['study_status']
+        if 'status' in self.data:
+            student.status = self.data['status']
+        if 'apply_time' in self.data:
+            student.apply_time = self.data['apply_time']
+        if 'source' in self.data:
+            student.source = self.data['source']
+        if 'background' in self.data:
+            student.background = self.data['background']
+        if 'qq_group' in self.data:
+            student.qq_group = self.data['qq_group']
+        if 'author' in self.data:
+            student.author = self.data['author']
+        if 'remark' in self.data:
+            student.remark = self.data['remark']
+      
+        if 'extend' in self.data:
+            student.extend = self.data['extend']
+        if 'major_sent' in self.data:
+            student.major_sent = self.data['major_sent']
+        if 'email_sent' in self.data:
+            student.email_sent = self.data['email_sent']
+        if 'public_sent' in self.data:
+            student.public_sent = self.data['public_sent']
+        if 'target_school' in self.data:
+            student.target_school = self.data['target_school']
+        
+        student.save()
+        if 'pro' in self.data:
+            data = self.data['pro']
+            (pro,pro_bool) = Lesson.objects.get_or_create(student=student,type='pro')
+
+            if 'teacher_name' in data:
+                pro.teacher_name = data['teacher_name']
+
+            if 'assistant_name' in data:
+                pro.assistant_name = data['assistant_name']
+            if 'skype_count' in data:
+                pro.skype_count = data['skype_count']
+            if 'class_level' in data:
+                pro.skype_count = data['class_level']
+            if 'if_protocol' in data:
+                pro.if_protocol = data['if_protocol']
+
+            pro.save()
+
+        if 'com' in self.data:
+            data = self.data['com']
+            (com,pro_bool) = Lesson.objects.get_or_create(student=student,type='com')
+
+            if 'teacher_name' in data:
+                com.teacher_name = data['teacher_name']
+
+            if 'assistant_name' in data:
+                com.assistant_name = data['assistant_name']
+            if 'skype_count' in data:
+                com.skype_count = data['skype_count']
+            if 'class_level' in data:
+                com.skype_count = data['class_level']
+            if 'if_protocol' in data:
+                com.if_protocol = data['if_protocol']
+        if 'pol' in self.data:
+            data = self.data['pol']
+            (pol,pro_bool) = Lesson.objects.get_or_create(student=student,type='pol')
+
+            if 'teacher_name' in data:
+                pol.teacher_name = data['teacher_name']
+
+            if 'assistant_name' in data:
+                pol.assistant_name = data['assistant_name']
+            if 'skype_count' in data:
+                pol.skype_count = data['skype_count']
+            if 'class_level' in data:
+                pol.skype_count = data['class_level']
+      
+            if 'if_protocol' in data:
+                pol.if_protocol = data['if_protocol']
+            pol.save()
+
+        if 'eng' in self.data:
+            data = self.data['pro']
+            (eng,pro_bool) = Lesson.objects.get_or_create(student=student,type='eng')
+
+            if 'teacher_name' in data:
+                eng.teacher_name = data['teacher_name']
+
+            if 'assistant_name' in data:
+                eng.assistant_name = data['assistant_name']
+            if 'skype_count' in data:
+                eng.skype_count = data['skype_count']
+            if 'class_level' in data:
+                eng.skype_count = data['class_level']
+      
+            if 'if_protocol' in data:
+                eng.if_protocol = data['if_protocol']
+
+            eng.save()
+        if 'teacher' in self.data:
+            student.teacher = Teacher.objects.get(id=int(self.data['teacher_id']))
+        student.save()
+
+        return student
 
     def update(self,pk):
 
@@ -183,4 +308,4 @@ class StudentAPI(Base):
         return student
 
     def delete(self, pk):
-        pass
+        Student.objects.get(id=pk).delete()

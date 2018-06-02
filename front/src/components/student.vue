@@ -17,7 +17,7 @@
             <el-form-item>
                 <el-button-group>
                     <el-button type="primary" @click="fetch" size="mini">查询</el-button>
-                    <el-button @click="add_form.visible=true" size="mini">增加</el-button>
+                    <el-button @click="$router.push('sitem?action=create')" size="mini">增加</el-button>
                      <el-button @click="  $router.push('/stuUpload')  " size="mini">批量上传</el-button>
                     <el-button @click="dataout" size="mini">导出</el-button>
                 </el-button-group>
@@ -28,7 +28,7 @@
 
         <el-table
                 :data="list"
-                style="width: 100%"
+            
                 border
                 size="mini"
                 v-loading="loading"
@@ -40,24 +40,25 @@
                 </template>
             </el-table-column>
             <el-table-column prop="name" label="姓名"></el-table-column>
+             <el-table-column prop="adviser" label="招生顾问" width="100"></el-table-column>
             <!--<el-table-column prop="sex" label="性别"></el-table-column>-->
             <el-table-column prop="mobile" label="电话" width="150"></el-table-column>
             <el-table-column prop="qq" label="qq" width="150"></el-table-column>
             <el-table-column prop="due_year" label="届数"></el-table-column>
-            <el-table-column prop="apply_time" label="报班时间" width="150"></el-table-column>
-             <el-table-column prop="old_school" label="原学校" width="250"></el-table-column>
-            <el-table-column prop="old_major" label="原专业" width="250"></el-table-column>
+            <el-table-column prop="apply_time" label="报班时间"></el-table-column>
+             <el-table-column prop="old_school" label="原学校"></el-table-column>
+            <el-table-column prop="old_major" label="原专业" ></el-table-column>
             <!--<el-table-column prop="status" label="状态"></el-table-column>-->
 
- <el-table-column prop="adviser" label="招生顾问" width="100"></el-table-column>
+
             <!--<el-table-column prop="if_old_major" label="if_old_major"></el-table-column>-->
             <!--<el-table-column prop="create_time" label="create_time"></el-table-column>-->
 
-<el-table-column prop="remark" label="备注" width="400"></el-table-column>
+<el-table-column prop="remark" label="备注"></el-table-column>
 
 
             <!--<el-table-column prop="background" label="background"></el-table-column>-->
-            <el-table-column label="操作" width="250">
+            <el-table-column label="操作" width="225">
                 <template scope="scope">
                     <el-button-group>
                         <el-button type="danger" @click="remove(scope.row)" size="mini">删除</el-button>
@@ -116,32 +117,7 @@
             change_page(p) {
                 console.log(p)
             },
-            open_edit(data) {
-                this.edit_form = {
-                    visible:true,
-
-                    if_old_major:data.if_old_major,
-                    remark:data.remark,
-                    old_school:data.old_school,
-                    id:data.id,
-                    apply_time:data.apply_time,
-                    source:data.source,
-                    due_year:data.due_year,
-                    author:data.author,
-                    extend:data.extend,
-                    study_status:data.study_status,
-                    sex:data.sex,
-                    update_time:data.update_time,
-                    name:data.name,
-                    qq_group:data.qq_group,
-                    create_time:data.create_time,
-                    qq:data.qq,
-                    old_major:data.old_major,
-                    adviser:data.adviser,
-                    status:data.status,
-                    background:data.background,
-                }
-            },
+            
             async fetch() {
 
                 var page_size = this.page_size,
@@ -163,30 +139,11 @@
                 this.total = page.total
                 this.loading = false
             },
-            async add() {
-
-                try {
-                    await this.su_validate('add_form')
-                    var add_form = this.add_form
-                    var response = await request.post('/v1/api/student/', add_form)
-                    this.add_form.visible = false
-                    this.$message({
-                        type: 'success',
-                        message: '添加数据成功'
-                    });
-                    this.fetch()
-                } catch (e) {
-                    this.$message({
-                        type: 'error',
-                        message: e.error
-                    });
-                }
-
-            },
+          
             async remove(data) {
 
                 try {
-                    await this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+                    await this.$confirm('此操作将永久删除该数据, 是否继续?', '提示', {
                         confirmButtonText: '确定',
                         cancelButtonText: '取消',
                         type: 'warning'
@@ -206,25 +163,6 @@
                 }
 
             },
-            async edit() {
-                try {
-                    await this.su_validate('edit_form')
-                    var edit_form = this.edit_form
-                    var id = edit_form.id
-                    this.$message({
-                        type: 'success',
-                        message: '修改信息成功!'
-                    });
-                    var response = await request.put('/v1/api/student/' + id + '/', edit_form)
-                    this.edit_form.visible = false
-                    this.fetch()
-                } catch (e) {
-                    this.$message({
-                        type: 'error',
-                        message: e.error
-                    });
-                }
-            }
         },
         mounted() {
             this.fetch()
