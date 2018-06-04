@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ky.apps.KyConfig',
-    'rest_framework_swagger'
 
 ]
 
