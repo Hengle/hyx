@@ -38,7 +38,6 @@ urlpatterns = [
     path('login/',login),
     path('logout/',logout),
     path('', index),
-    path('api/', schema_view),
     path('dev/', dev),
     path('v1/api/student/', include(StudentAPI.urls())),
     path('v1/api/teacher/', include(TeacherAPI.urls())),
