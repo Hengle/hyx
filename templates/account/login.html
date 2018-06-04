@@ -26,9 +26,9 @@
             <div>
 
                 <!-- <h1 class="logo-name">IN+</h1> -->
-              <img src="/static/img/logo_01.png" width="150"/>
+
             </div>
-            <h3>北京市海淀区教育招生和考试中心劳务费管理系统</h3>
+            <h3>jk</h3>
 {#            <p>注册一个账号把!亲#}
 {#                <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->#}
 {#            </p>#}
@@ -42,26 +42,12 @@
                 <div class="form-group">
                     <input type="password" class="form-control" name="password" placeholder="密码" required="">
                 </div>
-               <div class="form-group">
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="phone" placeholder="您绑定的手机号" name="phone">
-                        <span class="input-group-btn">
-                             <button type="button" class="btn btn-primary" id="sendcode">发送验证码</button>
-                        </span>
-                    </div>
-                </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" name="code" placeholder="您收到的验证码" >
-                </div>
-
-
-
 
                 <input type="submit" class="btn btn-primary block full-width m-b" value="登录"> </input>
-                <button  class="btn btn-default block full-width m-b"   onclick="location.href='/forget/'">修改(忘记)密码</button>
+
 
             </form>
-{#            <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small> </p>#}
+            <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small> </p>
         </div>
     </div>
 
@@ -75,17 +61,6 @@
 
     document.querySelector('.next').value = location.search.replace("?next=",'')
 
-    $("#sendcode").click(function () {
-        var phone = $("#phone").val()
-            $.ajax({
-                url:'/sendcode/?phone='+phone,
-                success:function () {
-                    $("#sendcode").text('已发送').removeClass('btn-primary')
-                    setTimeout(function () {
-                        $("#sendcode").text('重新发送验证码').addClass('btn-primary')
-                    },3000)
-                }
-            })
-    })
+
 </script>
 </html>

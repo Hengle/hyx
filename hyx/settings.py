@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ky.apps.KyConfig',
-
+    'rest_framework_swagger'
 
 ]
 
@@ -255,3 +255,4 @@ LOGGING2 = {
             # }
     },
 }
+LOGIN_URL='/login/'

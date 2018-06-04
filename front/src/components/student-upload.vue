@@ -23,7 +23,7 @@
       <el-form-item label="成功数">{{success}}</el-form-item>
       <el-form-item label="失败数">{{error}}</el-form-item>
        <el-form-item label="名字">
-         <span v-for="e in err_list">{{e}}&nbsp;&nbsp;</span>
+         <span v-for="e in err_list" style="color: red">{{e}}&nbsp;&nbsp;</span>
        </el-form-item>
     </el-form>
     <br/>
@@ -166,7 +166,8 @@
             that.success = that.success +1
           }).catch(function (e) {
            that.error=that.error+1
-           that.error_list.push(that.list[i].name)
+           console.log(that.list[i].name)
+           that.err_list.push(that.list[i].name)
          })
         }
         for(var i=0;i<this.list.length;i++){

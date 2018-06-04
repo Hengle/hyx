@@ -114,7 +114,7 @@
           }).catch(function (e) {
            // that.error=that.error+1
            console.log('hllo')
-             that.error = that.error +1
+           that.error = that.error +1
            that.err_list.push(that.list[i])
          })
         }

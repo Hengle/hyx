@@ -70,19 +70,18 @@ class Teacher(models.Model):
     def student(self):
         return self.student_set.all()
 
+class lb():
+    def __init__(self):
+        self.id = False,
+        self.type = '',
+        self.teacher_name = '',
+        self.assistant_name = '',
+        self.skype_count = 0,
 
+        self.if_protocol = '',
+        self.class_level = 7
 
-lesson_base =  dict(
-    id=False,
-    type='',
-    teacher_name='',
-    assistant_name='',
-    skype_count=0,
-
-    if_protocol='',
-    class_level=7
-)
-
+lesson_base = lb()
 class Student(models.Model):
     name = models.CharField(max_length=11, blank=True, null=True)
     if_old_major = models.IntegerField(blank=True, null=True)

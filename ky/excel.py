@@ -108,7 +108,8 @@ def student_export(request):
         ws.write(row_num, 2, t.target_school)
         ws.write(row_num, 3, t.name)
 
-        ws.write(row_num,4,get_class_name_by_id(t.pro.class_level))
+        if t.pro.class_level:
+            ws.write(row_num,4,get_class_name_by_id(t.pro.class_level))
         ws.write(row_num, 5, t.due_year)
         ws.write(row_num, 6, t.qq)
         ws.write(row_num, 7, t.mobile)
@@ -229,6 +230,7 @@ def get_pro_id(name):
 
 
 def student_upload(request):
+
     item = simplejson.loads(request.body)
 
     (student, student_bool) = Student.objects.get_or_create(name=item['name'])

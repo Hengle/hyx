@@ -2,9 +2,9 @@
     <div id="app">
         <div class="top-bar">
             <div class="right">
-                <span>欢迎：xiaoxiaosu</span>
-                <a href="/logout/" class="logout">
-                    <i class="icon iconfont icon-web-quit "></i>
+                <span>{{username}}</span>
+                <a href="/logout/" class="logout" style="font-size: 14px">
+                   退出
                 </a>
             </div>
         </div>
@@ -40,6 +40,7 @@
             var name = this.$route.path
             return {
                 name,
+                username:window.username,
             }
         },
         methods:{
@@ -75,7 +76,7 @@
 
     .top-bar{
         background:#1ab394 ;
-        height: 44x;
+        height: 44px;
         text-align: center;
         color: #ffffff;
         font-size: 30px;
@@ -87,7 +88,7 @@
     .right{
         position: absolute;
         right: 20px;
-
+        line-height: 44px;
         top: 0;
         bottom: 0;
         font-size: 14px;

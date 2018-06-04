@@ -47,6 +47,7 @@ class StudentAPI(Base):
         'email_sent':'email_sent',
         'major_sent':'major_sent',
         'public_sent':'public_sent',
+        'target_school':'target_school',
         'create_time':'create_time',
         'update_time':'update_time',
         'pro':SubPreparer('pro', lesson_preparer),
@@ -113,7 +114,7 @@ class StudentAPI(Base):
             student.public_sent = self.data['public_sent']
         if 'target_school' in self.data:
             student.target_school = self.data['target_school']
-        
+
         student.save()
         if 'pro' in self.data:
             data = self.data['pro']
@@ -127,7 +128,7 @@ class StudentAPI(Base):
             if 'skype_count' in data:
                 pro.skype_count = data['skype_count']
             if 'class_level' in data:
-                pro.skype_count = data['class_level']
+                pro.class_level = data['class_level']
             if 'if_protocol' in data:
                 pro.if_protocol = data['if_protocol']
 
@@ -145,7 +146,7 @@ class StudentAPI(Base):
             if 'skype_count' in data:
                 com.skype_count = data['skype_count']
             if 'class_level' in data:
-                com.skype_count = data['class_level']
+                com.class_level = data['class_level']
             if 'if_protocol' in data:
                 com.if_protocol = data['if_protocol']
         if 'pol' in self.data:
@@ -160,7 +161,7 @@ class StudentAPI(Base):
             if 'skype_count' in data:
                 pol.skype_count = data['skype_count']
             if 'class_level' in data:
-                pol.skype_count = data['class_level']
+                pol.class_level = data['class_level']
       
             if 'if_protocol' in data:
                 pol.if_protocol = data['if_protocol']
@@ -178,7 +179,7 @@ class StudentAPI(Base):
             if 'skype_count' in data:
                 eng.skype_count = data['skype_count']
             if 'class_level' in data:
-                eng.skype_count = data['class_level']
+                eng.class_level = data['class_level']
       
             if 'if_protocol' in data:
                 eng.if_protocol = data['if_protocol']
@@ -238,7 +239,7 @@ class StudentAPI(Base):
             if data['skype_count']:
                 pro.skype_count = data['skype_count']
             if data['class_level']:
-                pro.skype_count = data['class_level']
+                pro.class_level = data['class_level']
 
             if data['if_protocol']:
                 pro.if_protocol = data['if_protocol']
@@ -257,7 +258,7 @@ class StudentAPI(Base):
             if data['skype_count']:
                 com.skype_count = data['skype_count']
             if data['class_level']:
-                com.skype_count = data['class_level']
+                com.class_level = data['class_level']
 
 
             if data['if_protocol']:
@@ -278,7 +279,7 @@ class StudentAPI(Base):
                 pol.skype_count = data['skype_count']
 
             if data['class_level']:
-                pol.skype_count = data['class_level']
+                pol.class_level = data['class_level']
             if data['if_protocol']:
                 pol.if_protocol = data['if_protocol']
 
@@ -296,7 +297,7 @@ class StudentAPI(Base):
             if data['skype_count']:
                 eng.skype_count = data['skype_count']
             if data['class_level']:
-                eng.skype_count = data['class_level']
+                eng.class_level = data['class_level']
 
             if data['if_protocol']:
                 eng.if_protocol = data['if_protocol']

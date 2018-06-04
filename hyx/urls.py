@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-
+from rest_framework_swagger.views import get_swagger_view
 from ky.api.student import StudentAPI
 from ky.api.teacher import TeacherAPI
 
@@ -24,7 +24,7 @@ from ky.excel import teacher_template,teacher_upload,student_template,student_up
 
 from django.http.response import HttpResponse
 from django.conf.urls import handler404, handler500
-from ky.views import index,dev
+from ky.views import index,dev,login,logout
 
 def test(request):
     return HttpResponse('hello world')
@@ -32,9 +32,15 @@ def test(request):
 handler404 = 'ky.status.page404'
 handler500 = 'ky.status.page500'
 
+
+schema_view = get_swagger_view(title='Pastebin API')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/',login),
+    path('logout/',logout),
     path('', index),
+    path('api/', schema_view),
     path('dev/', dev),
     path('v1/api/student/', include(StudentAPI.urls())),
     path('v1/api/teacher/', include(TeacherAPI.urls())),
