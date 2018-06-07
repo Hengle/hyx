@@ -61,7 +61,18 @@ class TeacherAPI(Base):
     })
 
     def list(self):
-        return Teacher.objects.filter(name__icontains=self.request.GET.get('search', ''))
+        print(self.request.GET.get('is_war_more'),'waremore')
+        return Teacher.objects.filter(
+            name__icontains=self.request.GET['name'],
+            job__icontains=self.request.GET['job'],
+            is_stay__icontains=self.request.GET['is_stay'],
+            fudao_school__icontains=self.request.GET['fudao_school'],
+
+            is_cross_major__icontains=self.request.GET['is_cross_major'],
+            is_war_more__icontains=self.request.GET['is_war_more'],
+            is_wokring__icontains=self.request.GET['is_working'],
+            study_type__icontains=self.request.GET['study_type']
+        )
 
     def detail(self, pk):
         return Teacher.objects.get(id=pk)
@@ -69,7 +80,6 @@ class TeacherAPI(Base):
     def create(self):
         data = self.data
         t = Teacher()
-        t.sex = data['name'] if 'name' in data else ''
         t.qq = data['qq'] if 'qq' in data else ''
         t.mobile = data['mobile'] if 'mobile' in data else ''
         t.idcard = data['idcard'] if 'idcard' in data else ''
