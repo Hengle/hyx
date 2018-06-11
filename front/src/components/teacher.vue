@@ -20,30 +20,34 @@
       <el-form-item>
         <el-input v-model="filter.fudao_school" placeholder="辅导院校"></el-input>
       </el-form-item>
-      <el-form-item>
+      <el-form-item label="是否留任">
         <el-select v-model="filter.is_stay" placeholder="是否留任" clearable>
           <el-option value="是"></el-option>
           <el-option value="否"></el-option>
+          <el-option value="" label="全部">全部</el-option>
         </el-select>
       </el-form-item>
 
-      <el-form-item>
+      <el-form-item label="是否跨专业">
         <el-select v-model="filter.is_cross_major" placeholder="是否跨专业" clearable>
           <el-option value="本专业">本专业</el-option>
           <el-option value="跨专业">跨专业</el-option>
+               <el-option value="" label="全部">全部</el-option>
         </el-select>
       </el-form-item>
-      <el-form-item>
+      <el-form-item label="一站OR多战">
         <el-select v-model="filter.is_war_more" placeholder="一站OR多战" clearable>
           <el-option value="一战">一战</el-option>
           <el-option value="多战">多战</el-option>
+             <el-option value="" label="全部">全部</el-option>
         </el-select>
       </el-form-item>
 
-      <el-form-item>
-        <el-select v-model="filter.is_wokring" placeholder="是否在职考研" clearable>
+      <el-form-item label="是否在职考研">
+        <el-select v-model="filter.is_working" placeholder="是否在职考研" clearable>
           <el-option value="是">是</el-option>
           <el-option value="否">否</el-option>
+             <el-option value=""  label="全部">全部</el-option>
         </el-select>
       </el-form-item>
       <el-form-item>
