@@ -308,7 +308,7 @@
       },
 
       async fetch_teacher() {
-        let res = await request.get('/v1/api/teacher/')
+        let res = await request.get('/v1/api/teacher/',{params:{no_page:1}})
         this.teacher_list = res.data.list
       },
 
