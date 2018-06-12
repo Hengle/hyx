@@ -8,7 +8,7 @@
          <span v-for="e in err_list">{{e}}&nbsp;&nbsp;</span>
        </el-form-item>
     </el-form>
-    <el-form :inline="true" class="demo-form-inline" :loading="loading" size="mini">
+    <el-form :inline="true" class="demo-form-inline" size="mini">
 
 
       <el-form-item>
@@ -99,8 +99,8 @@
           let list = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]])
 
           that.list = list
-          that.total = that.list.length
-          console.log(that.list)
+          that.total = list.length
+          that.error = 0
         };
 
         reader.readAsBinaryString(file);
@@ -115,7 +115,7 @@
            // that.error=that.error+1
            console.log('hllo')
            that.error = that.error +1
-           that.err_list.push(that.list[i])
+           that.err_list.push(that.list[i].name)
          })
         }
         for(var i=0;i<this.list.length;i++){

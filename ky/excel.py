@@ -140,13 +140,8 @@ def teacher_template(request):
 def teacher_upload(request):
     body = simplejson.loads(request.body)
 
-    list = []
-
-    for key in body:
-        print(key, ' : ', body[key])
-
-    (t, teacher_bool) = Teacher.objects.get_or_create(mobile=body['mobile'])
-
+    (t, teacher_bool) = Teacher.objects.get_or_create(mobile=body['手机号码'])
+    t.name = body['姓名'] if '姓名' in body else ''
     t.sex = body['性别'] if '性别' in body else ''
     t.qq= body['QQ'] if 'QQ' in body else ''
     t.mobile=body['手机号码'] if '手机号码' in body else ''
