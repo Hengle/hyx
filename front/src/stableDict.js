@@ -166,6 +166,8 @@ const dict = {
     { "id": 5, "name": "VIPC", "skype_count": 8 },
     { "id": 6, "name": "高分全程", "skype_count": 0 },
     { "id": 7, "name": "培优全程", "skype_count": 0 },
+    { "id": 8, "name": "全程", "skype_count": 0 },
+    {"id": 9, "name": "错误班型", "skype_count": 0},
   ],
   "classLevelCommonEnglish": [
     { "id": 0, "name": "无", "skype_count": 0 },

@@ -201,7 +201,7 @@ class StudentAPI(Base):
 
 
         student = Student.objects.get(id=pk)
-        student.name = self.data['name'] if 'time' in self.data else student.name
+        student.name = self.data['name'] if 'name' in self.data else student.name
         student.if_old_major = self.data['if_old_major'] if 'if_old_major' in self.data else student.if_old_major
         student.sex = self.data['sex'] if 'sex' in self.data else student.sex
         student.qq = self.data['qq'] if 'qq' in self.data else student.qq

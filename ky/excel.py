@@ -212,6 +212,8 @@ pro_list = [
     {"id": 5, "name": "VIPC", "skype_count": 8},
     {"id": 6, "name": "高分全程", "skype_count": 0},
     {"id": 7, "name": "培优全程", "skype_count": 0},
+    {"id": 8, "name": "全程", "skype_count": 0},
+    {"id": 9, "name": "错误班型", "skype_count": 0},
 ]
 
 pro_map = ['9999', '32', '24', '16', '8', '0', '0']
@@ -221,7 +223,7 @@ def get_pro_id(name):
     for i in range(len(pro_list)):
         if pro_list[i]['name'] == name:
             return pro_list[i]['id']
-    return 0
+    return 9
 
 
 def student_upload(request):
