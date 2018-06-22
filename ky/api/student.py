@@ -72,9 +72,11 @@ class StudentAPI(Base):
     def create(self):
 
         student = Student()
-        
-        if 'name' in self.data:
-            student.name = self.data['name']
+        student.name = self.data['name'] if 'name' in self.data else ''
+        student.due_year = self.data['due_year'] if 'due_year' in self.data else ''
+        student.target_school = self.data['target_school'] if 'target_school' in self.data else ''
+        student.old_major = self.data['old_major'] if 'old_major' in self.data else ''
+        student.old_school = self.data['old_school'] if 'old_school' in self.data else ''
         if 'if_old_major' in self.data:
             student.if_old_major = self.data['if_old_major']
         if 'sex' in self.data:
@@ -85,12 +87,7 @@ class StudentAPI(Base):
             student.mobile = self.data['mobile']
         if 'adviser' in self.data:
             student.adviser = self.data['adviser']
-        if 'due_year' in self.data:
-            student.due_year = self.data['due_year']
-        if 'old_school' in self.data:
-            student.old_school = self.data['old_school']
-        if 'old_major' in self.data:
-            student.old_major = self.data['old_major']
+
         if 'study_status' in self.data:
             student.study_status = self.data['study_status']
         if 'study_status' in self.data:
@@ -118,8 +115,6 @@ class StudentAPI(Base):
             student.email_sent = self.data['email_sent']
         if 'public_sent' in self.data:
             student.public_sent = self.data['public_sent']
-        if 'target_school' in self.data:
-            student.target_school = self.data['target_school']
 
         student.save()
         if 'pro' in self.data:

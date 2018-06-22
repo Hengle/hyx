@@ -80,6 +80,8 @@ class TeacherAPI(Base):
     def create(self):
         data = self.data
         t = Teacher()
+
+
         t.name = data['name'] if 'name' in data else ''
         t.sex = data['sex'] if 'sex' in data else ''
         t.qq = data['qq'] if 'qq' in data else ''
