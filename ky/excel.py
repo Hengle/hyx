@@ -87,7 +87,7 @@ def teacher_export(request):
     wb.save(response)
     return response
 
-s_header = ['报班时间', '招生顾问', '报考学校', '姓名', '班型', '公共课', '届', 'qq', '电话', '专业', '本科学校', '备注']
+s_header = ['报班时间', '招生顾问', '报考学校', '姓名', '班型', '届', 'qq', '电话', '专业', '本科学校', '备注']
 
 def student_export(request):
     response = HttpResponse(content_type='application/ms-excel')
@@ -111,13 +111,13 @@ def student_export(request):
         if t.pro.class_level:
             ws.write(row_num,4,get_class_name_by_id(t.pro.class_level))
 
-        ws.write(row_num, 5, t.com.class_level)
-        ws.write(row_num, 6, t.due_year)
-        ws.write(row_num, 7, t.qq)
-        ws.write(row_num, 8, t.mobile)
-        ws.write(row_num, 9, t.old_major)
-        ws.write(row_num, 10, t.old_school)
-        ws.write(row_num, 11, t.remark)
+        # ws.write(row_num, 5, t.com.class_level)
+        ws.write(row_num, 5, t.due_year)
+        ws.write(row_num, 6, t.qq)
+        ws.write(row_num, 7, t.mobile)
+        ws.write(row_num, 8, t.old_major)
+        ws.write(row_num, 9, t.old_school)
+        ws.write(row_num, 10, t.remark)
 
     wb.save(response)
     return response
