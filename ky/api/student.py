@@ -150,6 +150,7 @@ class StudentAPI(Base):
                 com.class_level = data['class_level']
             if 'if_protocol' in data:
                 com.if_protocol = data['if_protocol']
+            com.save()
         if 'pol' in self.data:
             data = self.data['pol']
             (pol,pro_bool) = Lesson.objects.get_or_create(student=student,type='pol')
