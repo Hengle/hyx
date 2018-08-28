@@ -110,8 +110,8 @@ def student_export(request):
 
         if t.pro.class_level:
             ws.write(row_num,4,get_class_name_by_id(t.pro.class_level))
-        if t.com.class_level:
-            ws.write(row_num, 5, get_class_name_by_id(t.com.class_level))
+
+        ws.write(row_num, 5, t.com.class_level)
         ws.write(row_num, 6, t.due_year)
         ws.write(row_num, 7, t.qq)
         ws.write(row_num, 8, t.mobile)
