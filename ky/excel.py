@@ -230,7 +230,7 @@ def student_upload(request):
 
     item = simplejson.loads(request.body)
 
-    (student, student_bool) = Student.objects.get_or_create(name=item['name'])
+    (student, student_bool) = Student.objects.get_or_create(mobile=item['mobile'])
     if student_bool:
         item['status'] = '创建学生-'
     else:
