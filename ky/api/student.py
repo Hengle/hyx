@@ -58,13 +58,22 @@ class StudentAPI(Base):
 
     def list(self):
 
-        return Student.objects.filter(
+        list = Student.objects.filter(
             name__icontains=self.request.GET.get('name',''),
             due_year__icontains=self.request.GET.get('due_year',''),
             target_school__icontains=self.request.GET.get('target_school',''),
             old_major__icontains=self.request.GET.get('old_major',''),
             old_school__icontains=self.request.GET.get('old_school','')
         )
+
+        if self.request.GET.get('qq'):
+            list = list.filter(qq=self.request.GET.get('qq'))
+
+        if self.request.GET.get('mobile'):
+            list = list.filter(mobile=self.request.GET.get('mobile'))
+
+        return list
+
 
     def detail(self, pk):
         return Student.objects.get(id=pk)

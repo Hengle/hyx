@@ -43,7 +43,11 @@
       size="mini"
       v-loading="loading"
     >
-
+    <el-table-column prop="remark" label="备注" type="expand">
+        <template scope="scope">
+          {{scope.row.remark}}
+        </template>
+      </el-table-column>
       <el-table-column label="序号">
         <template scope="scope">
           {{scope.$index+(page_num-1)*page_size+1}}
@@ -65,7 +69,7 @@
       <!--<el-table-column prop="if_old_major" label="if_old_major"></el-table-column>-->
       <!--<el-table-column prop="create_time" label="create_time"></el-table-column>-->
 
-      <el-table-column prop="remark" label="备注"></el-table-column>
+
 
 
       <!--<el-table-column prop="background" label="background"></el-table-column>-->
@@ -166,7 +170,7 @@
 
         try {
           await this.$confirm('此操作将永久删除该数据, 是否继续?', '提示', {
-            confirmButtonText: '确定',
+            confirmButtonTgext: '确定',
             cancelButtonText: '取消',
             type: 'warning'
           })
