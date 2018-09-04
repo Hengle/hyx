@@ -10,7 +10,9 @@
 
 
     <el-form :inline="true" class="demo-form-inline" :loading="loading" size="mini">
-
+   <el-form-item>
+        <el-input v-model="filter.qq" placeholder="学生qq"></el-input>
+      </el-form-item>
       <el-form-item>
         <el-input v-model="filter.name" placeholder="学生姓名"></el-input>
       </el-form-item>
@@ -147,6 +149,7 @@
           params: {
             page_size,
             page_num,
+            qq:that.filter.qq,
             name:that.filter.name,
             old_school:that.filter.old_school,
             old_major:that.filter.old_major,

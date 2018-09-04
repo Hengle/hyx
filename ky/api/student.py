@@ -59,6 +59,7 @@ class StudentAPI(Base):
     def list(self):
 
         return Student.objects.filter(
+            qq__icontains=self.request.GET.get('qq',''),
             name__icontains=self.request.GET.get('name',''),
             due_year__icontains=self.request.GET.get('due_year',''),
             target_school__icontains=self.request.GET.get('target_school',''),
