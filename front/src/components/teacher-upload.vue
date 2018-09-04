@@ -108,8 +108,8 @@
 
       async upload(){
        var that = this
-         let r = function (i) {
-         request.post('/v1/excel/teacher_upload',that.list[i]).then(function (res) {
+         let r = async function (i) {
+         await request.post('/v1/excel/teacher_upload',that.list[i]).then(function (res) {
             that.success = that.success +1
           }).catch(function (e) {
            // that.error=that.error+1
@@ -119,7 +119,7 @@
          })
         }
         for(var i=0;i<this.list.length;i++){
-            r(i)
+            await r(i)
         }
       }
 
