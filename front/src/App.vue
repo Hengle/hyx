@@ -57,6 +57,7 @@
         },
         mounted(){
           this.fetch_teacher()
+          console.log('version-2018-09-04-14:38')
         }
 
     }

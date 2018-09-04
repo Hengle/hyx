@@ -108,18 +108,16 @@
 
       async upload(){
        var that = this
-         let r = async function (i) {
-         await request.post('/v1/excel/teacher_upload',that.list[i]).then(function (res) {
-            that.success = that.success +1
-          }).catch(function (e) {
-           // that.error=that.error+1
-           console.log('hllo')
+
+        for(var i=0;i<this.list.length;i++){
+         try {
+           await request.post('/v1/excel/teacher_upload',that.list[i])
+           that.success = that.success +1
+         }catch (e) {
            that.error = that.error +1
            that.err_list.push(that.list[i].name)
-         })
-        }
-        for(var i=0;i<this.list.length;i++){
-            await r(i)
+         }
+
         }
       }
 

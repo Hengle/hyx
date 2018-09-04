@@ -161,17 +161,16 @@
 
       async upload(){
         var that = this
-         let r = async function (i) {
-         request.post('/v1/excel/student_upload',that.list[i]).then(function (res) {
-            that.success = that.success +1
-          }).catch(function (e) {
-           that.error=that.error+1
-           let obj = that.list[i]
-           that.err_list.push(`${obj.name}-qq(${obj.qq}-mobile(${obj.mobile}) / `)
-         })
-        }
+
         for(var i=0;i<this.list.length;i++){
-            await r(i)
+          try {
+            await request.post('/v1/excel/student_upload',that.list[i])
+             that.success = that.success +1
+          }catch (e) {
+            that.error=that.error+1
+            let obj = that.list[i]
+            that.err_list.push(`${obj.name}-qq(${obj.qq}-mobile(${obj.mobile}) / `)
+          }
         }
       }
 
