@@ -87,7 +87,7 @@ def teacher_export(request):
     wb.save(response)
     return response
 
-s_header = ['报班时间', '招生顾问', '报考学校', '姓名', '班型', '届', 'qq', '电话', '专业', '本科学校', '备注']
+s_header = ['报班时间', '招生顾问', '报考学校', '姓名', '班型', '在职或在读', 'QQ', '电话号码', '专业', '本科学校', '备注']
 
 def student_export(request):
     response = HttpResponse(content_type='application/ms-excel')
@@ -131,7 +131,7 @@ def teacher_template(request):
     ws = wb.add_sheet('sheet1')
     row_num = 0
     for i in range(len(t_header)):
-        print(t_header[i])
+
         ws.write(row_num, i, t_header[i])
     wb.save(response)
     return response
@@ -214,23 +214,27 @@ pro_list = [
     {"id": 7, "name": "培优全程", "skype_count": 0},
     {"id": 8, "name": "全程", "skype_count": 0},
     {"id": 9, "name": "错误班型", "skype_count": 0},
+
+    {"id": 10, "name": "超车班", "skype_count": 0},
+    {"id": 11, "name": "超车三科", "skype_count": 0},
+    {"id": 12, "name": "爱心助考", "skype_count": 0},
 ]
 
 pro_map = ['9999', '32', '24', '16', '8', '0', '0']
 
 
-def get_pro_id(name):
+def get_pro(name):
     for i in range(len(pro_list)):
         if pro_list[i]['name'] == name:
-            return pro_list[i]['id']
-    return 9
+            return pro_list[i]
+    return pro_list[8]
 
 
 def student_upload(request):
 
     item = simplejson.loads(request.body)
 
-    (student, student_bool) = Student.objects.get_or_create(mobile=item['mobile'])
+    (student, student_bool) = Student.objects.get_or_create(qq=item['qq'])
     if student_bool:
         item['status'] = '创建学生-'
     else:
@@ -244,8 +248,9 @@ def student_upload(request):
 
     if 'pro_class_level' in item:
         (lesson, lesson_bool) = Lesson.objects.get_or_create(student=student, type='pro')
-        lesson.class_level = get_pro_id(item['pro_class_level'])
-        lesson.skype_count = pro_map[lesson.class_level]
+        pro = get_pro(item['pro_class_level'])
+        lesson.class_level = pro['id']
+        lesson.skype_count = pro['skype_count']
         lesson.type = 'pro'
         if lesson_bool:
             item['status'] = item['status'] + '创建班型'

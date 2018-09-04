@@ -166,14 +166,13 @@
             that.success = that.success +1
           }).catch(function (e) {
            that.error=that.error+1
-           console.log(that.list[i].name)
-           that.err_list.push(that.list[i].name)
+           let obj = that.list[i]
+           that.err_list.push(`${obj.name}-qq(${obj.qq}-mobile(${obj.mobile}) / `)
          })
         }
         for(var i=0;i<this.list.length;i++){
             r(i)
         }
-
       }
 
     },
