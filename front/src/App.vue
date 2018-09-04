@@ -25,7 +25,7 @@
                 </el-menu>
             </el-col>
             <el-col :span="22">
-                <div class="content">
+                <div class="content" v-if="!init">
                     <router-view/>
                 </div>
             </el-col>
@@ -39,15 +39,25 @@
         data(){
             var name = this.$route.path
             return {
-                name,
-                username:window.username,
+              name,
+              username:window.username,
+              init:true
             }
         },
         methods:{
             route(name){
                 this.$router.push(name)
-            }
+            },
+            async fetch_teacher() {
+              let res = await request.get('/v1/api/teacher/',{params:{no_page:1}})
+              window.teacher_list = res.data.list
+              this.init = false
+            },
+        },
+        mounted(){
+          this.fetch_teacher()
         }
+
     }
 </script>
 

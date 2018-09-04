@@ -279,7 +279,7 @@
         create: false,
         edit_item: true,
         basic: basic,
-        teacher_list: [],
+        teacher_list: window.teacher_list,
       }
     },
     methods: {
@@ -307,10 +307,7 @@
         this.end_loading()
       },
 
-      async fetch_teacher() {
-        let res = await request.get('/v1/api/teacher/',{params:{no_page:1}})
-        this.teacher_list = res.data.list
-      },
+
 
       async update() {
 
@@ -352,7 +349,7 @@
 
       } else {
         this.start_loading()
-        await this.fetch_teacher()
+        // await this.fetch_teacher()
         this.fetch()
 
         this.create = false
