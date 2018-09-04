@@ -72,7 +72,7 @@ class TeacherAPI(Base):
             is_war_more__icontains=self.request.GET.get('is_war_more',''),
             is_wokring__icontains=self.request.GET.get('is_working',''),
             study_type__icontains=self.request.GET.get('study_type','')
-        )
+        ).order_by('id')
 
     def detail(self, pk):
         return Teacher.objects.get(id=pk)
