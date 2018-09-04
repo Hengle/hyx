@@ -65,7 +65,7 @@ class StudentAPI(Base):
             target_school__icontains=self.request.GET.get('target_school',''),
             old_major__icontains=self.request.GET.get('old_major',''),
             old_school__icontains=self.request.GET.get('old_school','')
-        )
+        ).order_by('id')
 
     def detail(self, pk):
         return Student.objects.get(id=pk)
