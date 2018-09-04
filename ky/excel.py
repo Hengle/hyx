@@ -239,7 +239,8 @@ def student_upload(request):
         item['status'] = '创建学生-'
     else:
         item['status'] = '更新学生-'
-
+    if 'name' in item:
+        student.name = item['name']
     if 'apply_time' in item:
         student.apply_time = item['apply_time']
 
